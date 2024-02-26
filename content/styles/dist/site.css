@@ -1,0 +1,126 @@
+/* START FONT STYLES */
+@font-face {
+  font-family: "Tan Mon Cheri";
+  src: url("../../fonts/tan-mon-cheri.eot");
+  src: url("../../fonts/tan-mon-cheri.woff2") format("woff2"), url("../../fonts/tan-mon-cheri.woff") format("woff");
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.open-sans-regular {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* END FONT STYLES */
+body {
+  max-width: 100vw;
+}
+
+section {
+  height: 100vh;
+}
+
+#title-section {
+  background-color: #fef7f2;
+}
+#title-section .navbar {
+  text-transform: uppercase;
+  background-color: #fef7f2;
+  color: #cd9494 !important;
+  z-index: 100;
+  letter-spacing: 6px;
+}
+#title-section .navbar #june-bug-logo {
+  max-width: 80px;
+}
+#title-section .navbar .navbar-brand {
+  color: #cd9494;
+}
+#title-section .navbar .line-vertical {
+  border-right: 1.75px solid #cd9494;
+  height: 30px;
+}
+#title-section .navbar .nav-link {
+  color: #cd9494;
+  font-size: 1em;
+  width: 135px;
+}
+#title-section .navbar .nav-link:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  display: block;
+  transition: all 0.3s ease;
+  bottom: 25%;
+}
+#title-section .navbar .nav-link:hover::after {
+  width: 114px;
+  height: 1px;
+  background-color: #cd9494;
+}
+#title-section .navbar a.position-absolute {
+  left: 14px;
+}
+#title-section #june-bug-tile-section-bg-image {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../images/woman-facing-away-in-mirror.jpg");
+}
+#title-section #june-bug-title-section-text-container {
+  top: 0;
+}
+#title-section #june-bug-title-section-text-container #june-bug-title-section-text {
+  color: #cd9494;
+  text-transform: uppercase;
+}
+#title-section #june-bug-title-section-text-container #june-bug-title-section-text .line {
+  border-bottom: 1px solid #cd9494;
+  width: 200px;
+  display: block;
+}
+#title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+  font-size: 5em;
+  font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+#title-section #june-bug-title-section-text-container #june-bug-title-section-text p {
+  letter-spacing: 6px;
+}
+#title-section #june-bug-title-section-text-container #june-bug-title-section-text .text-larger {
+  font-size: 1.5em;
+}
+#title-section #june-bug-title-section-text-container #june-big-title-setion-doula-image {
+  border: 20px solid #fef7f2;
+  height: 500px;
+  width: 300px;
+  background-image: url(../../images/aubrey-smiling-forward.jpg);
+  background-size: cover;
+  background-position: center;
+}
