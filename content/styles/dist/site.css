@@ -93,6 +93,16 @@ section {
   background-position: center;
   background-image: url("../../images/woman-facing-away-in-mirror.jpg");
 }
+#title-section #june-big-title-section-doula-image {
+  border: 20px solid #fef7f2;
+  height: 500px;
+  width: 300px;
+  background-image: url(../../images/aubrey-smiling-forward.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  left: -150px;
+}
 #title-section #june-bug-title-section-text-container {
   top: 0;
 }
