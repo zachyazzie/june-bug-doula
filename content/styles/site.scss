@@ -1,5 +1,7 @@
 $light-brown: #fef7f2;
-$blush: #cd9494;
+$dark-brown: #a48079;
+$dark-blush: #cd9494;
+$blush: #e8d1c7;
 
 /* START FONT STYLES */
 
@@ -57,21 +59,21 @@ section {
   .navbar {
     text-transform: uppercase;
     background-color: $light-brown;
-    color: $blush !important;
+    color: $dark-blush !important;
     z-index: 100;
     letter-spacing: 6px;
     #june-bug-logo {
       max-width: 80px;
     }
     .navbar-brand {
-      color: $blush;
+      color: $dark-blush;
     }
     .line-vertical {
-      border-right: 1.75px solid $blush;
+      border-right: 1.75px solid $dark-blush;
       height: 30px;
     }
     .nav-link {
-      color: $blush;
+      color: $dark-blush;
       font-size: 1em;
       width: 135px;
 
@@ -88,7 +90,7 @@ section {
       &:hover::after {
         width: 114px;
         height: 1px;
-        background-color: $blush;
+        background-color: $dark-blush;
       }
     }
     a.position-absolute {
@@ -117,11 +119,11 @@ section {
   #june-bug-title-section-text-container {
     top: 0;
     #june-bug-title-section-text {
-      color: $blush;
+      color: $dark-blush;
       text-transform: uppercase;
 
       .line {
-        border-bottom: 1px solid $blush;
+        border-bottom: 1px solid $dark-blush;
         width: 200px;
         display: block;
       }
@@ -147,4 +149,103 @@ section {
       background-position: center;
     }
   }
+}
+
+#about-me-section {
+  #about-me-section-bg {
+    height: 100vh;
+    .cream-bar-top,
+    .cream-bar-bottom {
+      background-color: $light-brown;
+      height: 15vh;
+    }
+
+    .blush-bar {
+      background-color: $blush;
+      height: 70vh;
+    }
+  }
+
+  .container {
+    .row {
+      #about-header {
+        height: 15vh;
+        h2 {
+          color: $dark-blush;
+          line-height: normal !important;
+          text-transform: uppercase;
+          font-size: 1.5em;
+          font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
+          text-transform: uppercase;
+        }
+      }
+      .col-6 {
+        height: 35vh;
+        .text-container {
+          h3 {
+            color: $dark-brown;
+            line-height: normal !important;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+          }
+
+          p {
+            color: $dark-brown;
+          }
+        }
+      }
+
+      #about-me-img-container {
+        position: absolute;
+        bottom: 0;
+
+        #about-me-img {
+          border: 20px solid $light-brown;
+          border-bottom: none;
+          height: 80vh;
+          width: 100%;
+          background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
+          background-size: cover;
+          background-position: center;
+          border-top-left-radius: 50rem;
+          border-top-right-radius: 50rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    height: 70vh !important;
+  }
+
+  #about-me-img-container {
+    position: absolute;
+    bottom: 0;
+    left: 33%;
+
+    #about-me-img {
+      border: 20px solid $light-brown;
+      border-bottom: none;
+      height: 80vh;
+      width: 100%;
+      background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: 50rem;
+      border-top-right-radius: 50rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
 }

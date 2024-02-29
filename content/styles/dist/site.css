@@ -134,3 +134,79 @@ section {
   background-size: cover;
   background-position: center;
 }
+
+#about-me-section #about-me-section-bg {
+  height: 100vh;
+}
+#about-me-section #about-me-section-bg .cream-bar-top,
+#about-me-section #about-me-section-bg .cream-bar-bottom {
+  background-color: #fef7f2;
+  height: 15vh;
+}
+#about-me-section #about-me-section-bg .blush-bar {
+  background-color: #e8d1c7;
+  height: 70vh;
+}
+#about-me-section .container .row #about-header {
+  height: 15vh;
+}
+#about-me-section .container .row #about-header h2 {
+  color: #cd9494;
+  line-height: normal !important;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+#about-me-section .container .row .col-6 {
+  height: 35vh;
+}
+#about-me-section .container .row .col-6 .text-container h3 {
+  color: #a48079;
+  line-height: normal !important;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+#about-me-section .container .row .col-6 .text-container p {
+  color: #a48079;
+}
+#about-me-section .container .row #about-me-img-container {
+  position: absolute;
+  bottom: 0;
+}
+#about-me-section .container .row #about-me-img-container #about-me-img {
+  border: 20px solid #fef7f2;
+  border-bottom: none;
+  height: 80vh;
+  width: 100%;
+  background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 50rem;
+  border-top-right-radius: 50rem;
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    height: 70vh !important;
+  }
+
+  #about-me-img-container {
+    position: absolute;
+    bottom: 0;
+    left: 33%;
+  }
+  #about-me-img-container #about-me-img {
+    border: 20px solid #fef7f2;
+    border-bottom: none;
+    height: 80vh;
+    width: 100%;
+    background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 50rem;
+    border-top-right-radius: 50rem;
+  }
+}
