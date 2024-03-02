@@ -3,6 +3,14 @@ $dark-brown: #a48079;
 $dark-blush: #cd9494;
 $blush: #e8d1c7;
 
+/* START BOOTSTRAP OVERRIDES */
+
+.container-xl-custom {
+  max-width: 1400px !important;
+}
+
+/* END BOOTSTRAP OVERRIDES */
+
 /* START FONT STYLES */
 
 @font-face {
@@ -166,7 +174,7 @@ section {
     }
   }
 
-  .container {
+  .container-xl-custom {
     .row {
       #about-header {
         height: 15vh;
@@ -182,6 +190,8 @@ section {
       .col-6 {
         height: 35vh;
         .text-container {
+          letter-spacing: 2px;
+
           h3 {
             color: $dark-brown;
             line-height: normal !important;
@@ -193,6 +203,7 @@ section {
 
           p {
             color: $dark-brown;
+            font-size: 1.25em;
           }
         }
       }
@@ -224,14 +235,14 @@ section {
 }
 
 @media (min-width: 992px) {
-  .col-lg-4 {
+  .about-me-item-wrapper {
     height: 70vh !important;
   }
 
   #about-me-img-container {
     position: absolute;
     bottom: 0;
-    left: 33%;
+    left: 29%;
 
     #about-me-img {
       border: 20px solid $light-brown;

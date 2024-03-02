@@ -1,3 +1,9 @@
+/* START BOOTSTRAP OVERRIDES */
+.container-xl-custom {
+  max-width: 1400px !important;
+}
+
+/* END BOOTSTRAP OVERRIDES */
 /* START FONT STYLES */
 @font-face {
   font-family: "Tan Mon Cheri";
@@ -147,10 +153,10 @@ section {
   background-color: #e8d1c7;
   height: 70vh;
 }
-#about-me-section .container .row #about-header {
+#about-me-section .container-xl-custom .row #about-header {
   height: 15vh;
 }
-#about-me-section .container .row #about-header h2 {
+#about-me-section .container-xl-custom .row #about-header h2 {
   color: #cd9494;
   line-height: normal !important;
   text-transform: uppercase;
@@ -158,10 +164,13 @@ section {
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-#about-me-section .container .row .col-6 {
+#about-me-section .container-xl-custom .row .col-6 {
   height: 35vh;
 }
-#about-me-section .container .row .col-6 .text-container h3 {
+#about-me-section .container-xl-custom .row .col-6 .text-container {
+  letter-spacing: 2px;
+}
+#about-me-section .container-xl-custom .row .col-6 .text-container h3 {
   color: #a48079;
   line-height: normal !important;
   text-transform: uppercase;
@@ -169,14 +178,15 @@ section {
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-#about-me-section .container .row .col-6 .text-container p {
+#about-me-section .container-xl-custom .row .col-6 .text-container p {
   color: #a48079;
+  font-size: 1.25em;
 }
-#about-me-section .container .row #about-me-img-container {
+#about-me-section .container-xl-custom .row #about-me-img-container {
   position: absolute;
   bottom: 0;
 }
-#about-me-section .container .row #about-me-img-container #about-me-img {
+#about-me-section .container-xl-custom .row #about-me-img-container #about-me-img {
   border: 20px solid #fef7f2;
   border-bottom: none;
   height: 80vh;
@@ -189,14 +199,14 @@ section {
 }
 
 @media (min-width: 992px) {
-  .col-lg-4 {
+  .about-me-item-wrapper {
     height: 70vh !important;
   }
 
   #about-me-img-container {
     position: absolute;
     bottom: 0;
-    left: 33%;
+    left: 29%;
   }
   #about-me-img-container #about-me-img {
     border: 20px solid #fef7f2;
