@@ -1,6 +1,8 @@
 /* START BOOTSTRAP OVERRIDES */
 .container-xl-custom {
   max-width: 1400px !important;
+  height: 100%;
+  width: 100%;
 }
 
 /* END BOOTSTRAP OVERRIDES */
@@ -54,6 +56,7 @@ body {
 
 section {
   height: 100vh;
+  background-color: #fef7f2;
 }
 
 #title-section {
@@ -240,6 +243,15 @@ section {
   width: 100%;
   border-top-right-radius: 5em;
   border-bottom-right-radius: 5em;
+}
+
+#june-bug-pricing-section .container-xl-custom .row .bg-color-container {
+  height: 50vh;
+}
+#june-bug-pricing-section .container-xl-custom .row .bg-color-container .bg-color {
+  background-color: #e8d1c7;
+  height: 100%;
+  border-radius: 2em;
 }
 
 @media (min-width: 992px) {

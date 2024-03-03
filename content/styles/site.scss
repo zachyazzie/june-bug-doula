@@ -8,6 +8,8 @@ $blush: #e8d1c7;
 
 .container-xl-custom {
   max-width: 1400px !important;
+  height: 100%;
+  width: 100%;
 }
 
 /* END BOOTSTRAP OVERRIDES */
@@ -65,6 +67,7 @@ body {
 
 section {
   height: 100vh;
+  background-color: $light-brown;
 }
 
 #title-section {
@@ -276,6 +279,21 @@ section {
             border-top-right-radius: 5em;
             border-bottom-right-radius: 5em;
           }
+        }
+      }
+    }
+  }
+}
+
+#june-bug-pricing-section {
+  .container-xl-custom {
+    .row {
+      .bg-color-container {
+        height: 50vh;
+        .bg-color {
+          background-color: $blush;
+          height: 100%;
+          border-radius: 2em;
         }
       }
     }
