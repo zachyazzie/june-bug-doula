@@ -1,6 +1,7 @@
 $light-brown: #fef7f2;
 $dark-brown: #a48079;
 $dark-blush: #cd9494;
+$medium-blush: #d1a299;
 $blush: #e8d1c7;
 
 /* START BOOTSTRAP OVERRIDES */
@@ -18,6 +19,11 @@ $blush: #e8d1c7;
   src: url("../../fonts/tan-mon-cheri.eot");
   src: url("../../fonts/tan-mon-cheri.woff2") format("woff2"),
     url("../../fonts/tan-mon-cheri.woff") format("woff");
+}
+
+.mon-cheri {
+  font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 
 .poppins-regular {
@@ -222,6 +228,54 @@ section {
           background-position: center;
           border-top-left-radius: 50rem;
           border-top-right-radius: 50rem;
+        }
+      }
+    }
+  }
+}
+
+#why-section {
+  background-color: $light-brown;
+  height: 100vh;
+
+  .row {
+    .col-12 {
+      height: 100vh;
+      .row {
+        #june-bug-why-section-image {
+          z-index: 2;
+          border: 20px solid $light-brown;
+          height: 100%;
+          background-image: url(../../images/woman-holding-belly.jpg);
+          background-size: cover;
+          background-position: center;
+        }
+
+        .col-8 {
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          right: 0;
+
+          .text-container {
+            max-width: 700px;
+            color: $light-brown;
+            h3 {
+              font-size: 3.25em;
+            }
+            p {
+              font-size: 1.25em;
+            }
+          }
+        }
+        .col-10 {
+          .bg-container {
+            background-color: $medium-blush;
+            height: 100%;
+            width: 100%;
+            border-top-right-radius: 5em;
+            border-bottom-right-radius: 5em;
+          }
         }
       }
     }
