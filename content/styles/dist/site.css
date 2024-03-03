@@ -3,6 +3,7 @@
   max-width: 1400px !important;
   height: 100%;
   width: 100%;
+  line-height: normal !important;
 }
 
 /* END BOOTSTRAP OVERRIDES */
@@ -245,13 +246,45 @@ section {
   border-bottom-right-radius: 5em;
 }
 
-#june-bug-pricing-section .container-xl-custom .row .bg-color-container {
-  height: 50vh;
+#pricing-section .container-xl-custom .row .bg-color-container {
+  height: 375px;
 }
-#june-bug-pricing-section .container-xl-custom .row .bg-color-container .bg-color {
+#pricing-section .container-xl-custom .row .bg-color-container .bg-color {
   background-color: #e8d1c7;
   height: 100%;
   border-radius: 2em;
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-12 {
+  color: #fff;
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-12 h3 {
+  font-size: 2.75em;
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 {
+  color: #a48079;
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 p {
+  font-size: 1.25em;
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-1,
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-2,
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-3 {
+  z-index: 2;
+  border: 20px solid #fef7f2;
+  height: 300px;
+  width: 200px;
+  background-image: url(../../images/woman-laying-on-side.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-1 {
+  background-image: url(../../images/woman-laying-on-side.jpg);
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-2 {
+  background-image: url(../../images/woman-receiving-support.jpg);
+}
+#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-3 {
+  background-image: url(../../images/woman-in-online-meeting.jpg);
 }
 
 @media (min-width: 992px) {

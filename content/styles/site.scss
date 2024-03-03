@@ -10,6 +10,7 @@ $blush: #e8d1c7;
   max-width: 1400px !important;
   height: 100%;
   width: 100%;
+  line-height: normal !important;
 }
 
 /* END BOOTSTRAP OVERRIDES */
@@ -285,15 +286,53 @@ section {
   }
 }
 
-#june-bug-pricing-section {
+#pricing-section {
   .container-xl-custom {
     .row {
       .bg-color-container {
-        height: 50vh;
+        height: 375px;
         .bg-color {
           background-color: $blush;
           height: 100%;
           border-radius: 2em;
+        }
+      }
+      .col-12 {
+        .row {
+          .col-12 {
+            color: #fff;
+
+            h3 {
+              font-size: 2.75em;
+            }
+          }
+          .col-md-4 {
+            color: $dark-brown;
+            p {
+              font-size: 1.25em;
+            }
+
+            #pricing-img-1,
+            #pricing-img-2,
+            #pricing-img-3 {
+              z-index: 2;
+              border: 20px solid $light-brown;
+              height: 300px;
+              width: 200px;
+              background-image: url(../../images/woman-laying-on-side.jpg);
+              background-size: cover;
+              background-position: center;
+            }
+            #pricing-img-1 {
+              background-image: url(../../images/woman-laying-on-side.jpg);
+            }
+            #pricing-img-2 {
+              background-image: url(../../images/woman-receiving-support.jpg);
+            }
+            #pricing-img-3 {
+              background-image: url(../../images/woman-in-online-meeting.jpg);
+            }
+          }
         }
       }
     }
