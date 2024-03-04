@@ -64,10 +64,11 @@ $blush: #e8d1c7;
 /* END FONT STYLES */
 body {
   max-width: 100vw;
+  background-color: $light-brown;
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   background-color: $light-brown;
 }
 
@@ -336,6 +337,31 @@ section {
         }
       }
     }
+  }
+}
+
+#contact-section {
+  .col-9 {
+    #contact-section-info-container {
+      background-color: $medium-blush;
+      color: #fff;
+      border-radius: 2em;
+      height: 70vh;
+
+      .contact-heading-sm {
+        font-size: 2em;
+      }
+      .contact-heading-lg {
+        font-size: 5em;
+      }
+
+      .open-sans-regular {
+        font-size: 1.25em;
+      }
+    }
+  }
+  #june-bug-contact-section-image {
+    background-image: url(../../images/aubrey-smiling-looking-up.jpg);
   }
 }
 
