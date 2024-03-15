@@ -245,7 +245,7 @@ section {
 
   .row {
     .col-12 {
-      height: 100vh;
+      height: 80vh;
       .row {
         #june-bug-why-section-image {
           z-index: 2;
@@ -341,27 +341,64 @@ section {
 }
 
 #contact-section {
-  .col-9 {
-    #contact-section-info-container {
-      background-color: $medium-blush;
-      color: #fff;
-      border-radius: 2em;
-      height: 70vh;
+  .text-right .mon-cheri {
+    color: $medium-blush;
+  }
+  .content-section-info-wrapper {
+    .col-10 {
+      #contact-section-info-container {
+        background-color: $medium-blush;
+        color: #fff;
+        border-radius: 2em;
+        height: 70vh;
 
-      .contact-heading-sm {
-        font-size: 2em;
-      }
-      .contact-heading-lg {
-        font-size: 5em;
-      }
+        .contact-heading-sm {
+          font-size: 2em;
+        }
+        .contact-heading-lg {
+          font-size: 5em;
+        }
 
-      .open-sans-regular {
-        font-size: 1.25em;
+        .open-sans-regular {
+          font-size: 1.25em;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .col-4 {
+      right: 0;
+      top: 13%;
+
+      #june-bug-contact-section-image {
+        border: 20px solid $light-brown;
+        height: 50vh;
+        width: 100%;
+        background-image: url(../../images/aubrey-smiling-looking-up.jpg);
+        background-size: cover;
+        background-position: center;
+        border-top-left-radius: 50rem;
+        border-top-right-radius: 50rem;
       }
     }
   }
-  #june-bug-contact-section-image {
-    background-image: url(../../images/aubrey-smiling-looking-up.jpg);
+
+  footer {
+    border-top: 2px solid $medium-blush;
+
+    a {
+      font-size: 1.5em;
+      color: $medium-blush;
+    }
+
+    .rounded-circle {
+      background-color: $medium-blush;
+      height: 40px;
+      width: 40px;
+      img {
+        height: 25px;
+      }
+    }
   }
 }
 

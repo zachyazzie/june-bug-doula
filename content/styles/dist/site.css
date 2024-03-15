@@ -213,7 +213,7 @@ section {
   height: 100vh;
 }
 #why-section .row .col-12 {
-  height: 100vh;
+  height: 80vh;
 }
 #why-section .row .col-12 .row #june-bug-why-section-image {
   z-index: 2;
@@ -288,23 +288,54 @@ section {
   background-image: url(../../images/woman-in-online-meeting.jpg);
 }
 
-#contact-section .col-9 #contact-section-info-container {
+#contact-section .text-right .mon-cheri {
+  color: #d1a299;
+}
+#contact-section .content-section-info-wrapper .col-10 #contact-section-info-container {
   background-color: #d1a299;
   color: #fff;
   border-radius: 2em;
   height: 70vh;
 }
-#contact-section .col-9 #contact-section-info-container .contact-heading-sm {
+#contact-section .content-section-info-wrapper .col-10 #contact-section-info-container .contact-heading-sm {
   font-size: 2em;
 }
-#contact-section .col-9 #contact-section-info-container .contact-heading-lg {
+#contact-section .content-section-info-wrapper .col-10 #contact-section-info-container .contact-heading-lg {
   font-size: 5em;
 }
-#contact-section .col-9 #contact-section-info-container .open-sans-regular {
+#contact-section .content-section-info-wrapper .col-10 #contact-section-info-container .open-sans-regular {
   font-size: 1.25em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-#contact-section #june-bug-contact-section-image {
+#contact-section .content-section-info-wrapper .col-4 {
+  right: 0;
+  top: 13%;
+}
+#contact-section .content-section-info-wrapper .col-4 #june-bug-contact-section-image {
+  border: 20px solid #fef7f2;
+  height: 50vh;
+  width: 100%;
   background-image: url(../../images/aubrey-smiling-looking-up.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 50rem;
+  border-top-right-radius: 50rem;
+}
+#contact-section footer {
+  border-top: 2px solid #d1a299;
+}
+#contact-section footer a {
+  font-size: 1.5em;
+  color: #d1a299;
+}
+#contact-section footer .rounded-circle {
+  background-color: #d1a299;
+  height: 40px;
+  width: 40px;
+}
+#contact-section footer .rounded-circle img {
+  height: 25px;
 }
 
 @media (min-width: 992px) {
