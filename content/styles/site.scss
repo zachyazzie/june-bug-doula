@@ -77,7 +77,6 @@ section {
 
   .navbar {
     text-transform: uppercase;
-    background-color: $light-brown;
     color: $dark-blush !important;
     z-index: 100;
     letter-spacing: 6px;
@@ -112,27 +111,102 @@ section {
         background-color: $dark-blush;
       }
     }
+    @media (max-width: 1182px) {
+      .letter-1 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 1158px) {
+      .letter-2 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 1129px) {
+      .letter-3 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 1100px) {
+      .letter-4 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 1074px) {
+      .letter-5 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 1042px) {
+      .letter-6 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 1013px) {
+      .letter-7 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 917px) {
+      .letter-8 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 885px) {
+      .letter-9 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 859px) {
+      .letter-10 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 839px) {
+      .letter-11 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 813px) {
+      .letter-12 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 791px) {
+      .letter-13 {
+        color: #fff !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .letter-1,
+      .letter-2,
+      .letter-3,
+      .letter-4,
+      .letter-5,
+      .letter-6,
+      .letter-7,
+      .letter-8,
+      .letter-9,
+      .letter-10,
+      .letter-11,
+      .letter-12,
+      .letter-13,
+      .letter-14 {
+        color: $dark-blush !important;
+      }
+    }
+
     a.position-absolute {
       left: 14px;
     }
   }
 
-  #june-bug-tile-section-bg-image {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-image: url("../../images/woman-facing-away-in-mirror.jpg");
-  }
-
   #june-big-title-section-doula-image {
-    border: 20px solid $light-brown;
-    height: 500px;
+    height: 300px;
     width: 300px;
     background-image: url(../../images/aubrey-smiling-forward.jpg);
     background-size: cover;
     background-position: center;
-    z-index: 2;
-    left: -150px;
+    border-radius: 50rem;
   }
 
   #june-bug-title-section-text-container {
@@ -148,9 +222,30 @@ section {
       }
 
       h1 {
-        font-size: 5em;
         font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
         text-transform: uppercase;
+      }
+      .hero-subtitle {
+        display: flex;
+        flex-direction: column;
+      }
+      @media (min-width: 860px) {
+        h1 {
+          font-size: 3em;
+        }
+      }
+      @media (min-width: 1050px) {
+        h1 {
+          font-size: 4em;
+        }
+        .hero-subtitle {
+          display: block;
+        }
+      }
+      @media (min-width: 1230px) {
+        h1 {
+          font-size: 5em;
+        }
       }
       p {
         letter-spacing: 6px;
@@ -406,6 +501,22 @@ section {
 }
 
 @media (min-width: 768px) {
+  #june-big-title-section-doula-image {
+    position: absolute;
+    border: 20px solid $light-brown;
+    height: 500px !important;
+    width: 300px;
+    z-index: 2;
+    left: -150px;
+    border-radius: 50rem !important;
+  }
+
+  #june-bug-tile-section-bg-image {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../images/woman-facing-away-in-mirror.jpg");
+  }
 }
 
 @media (min-width: 992px) {

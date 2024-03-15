@@ -66,7 +66,6 @@ section {
 }
 #title-section .navbar {
   text-transform: uppercase;
-  background-color: #fef7f2;
   color: #cd9494 !important;
   z-index: 100;
   letter-spacing: 6px;
@@ -100,24 +99,99 @@ section {
   height: 1px;
   background-color: #cd9494;
 }
+@media (max-width: 1182px) {
+  #title-section .navbar .letter-1 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 1158px) {
+  #title-section .navbar .letter-2 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 1129px) {
+  #title-section .navbar .letter-3 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 1100px) {
+  #title-section .navbar .letter-4 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 1074px) {
+  #title-section .navbar .letter-5 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 1042px) {
+  #title-section .navbar .letter-6 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 1013px) {
+  #title-section .navbar .letter-7 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 917px) {
+  #title-section .navbar .letter-8 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 885px) {
+  #title-section .navbar .letter-9 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 859px) {
+  #title-section .navbar .letter-10 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 839px) {
+  #title-section .navbar .letter-11 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 813px) {
+  #title-section .navbar .letter-12 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 791px) {
+  #title-section .navbar .letter-13 {
+    color: #fff !important;
+  }
+}
+@media (max-width: 767px) {
+  #title-section .navbar .letter-1,
+#title-section .navbar .letter-2,
+#title-section .navbar .letter-3,
+#title-section .navbar .letter-4,
+#title-section .navbar .letter-5,
+#title-section .navbar .letter-6,
+#title-section .navbar .letter-7,
+#title-section .navbar .letter-8,
+#title-section .navbar .letter-9,
+#title-section .navbar .letter-10,
+#title-section .navbar .letter-11,
+#title-section .navbar .letter-12,
+#title-section .navbar .letter-13,
+#title-section .navbar .letter-14 {
+    color: #cd9494 !important;
+  }
+}
 #title-section .navbar a.position-absolute {
   left: 14px;
 }
-#title-section #june-bug-tile-section-bg-image {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../../images/woman-facing-away-in-mirror.jpg");
-}
 #title-section #june-big-title-section-doula-image {
-  border: 20px solid #fef7f2;
-  height: 500px;
+  height: 300px;
   width: 300px;
   background-image: url(../../images/aubrey-smiling-forward.jpg);
   background-size: cover;
   background-position: center;
-  z-index: 2;
-  left: -150px;
+  border-radius: 50rem;
 }
 #title-section #june-bug-title-section-text-container {
   top: 0;
@@ -132,9 +206,30 @@ section {
   display: block;
 }
 #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
-  font-size: 5em;
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+}
+#title-section #june-bug-title-section-text-container #june-bug-title-section-text .hero-subtitle {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 860px) {
+  #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+    font-size: 3em;
+  }
+}
+@media (min-width: 1050px) {
+  #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+    font-size: 4em;
+  }
+  #title-section #june-bug-title-section-text-container #june-bug-title-section-text .hero-subtitle {
+    display: block;
+  }
+}
+@media (min-width: 1230px) {
+  #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+    font-size: 5em;
+  }
 }
 #title-section #june-bug-title-section-text-container #june-bug-title-section-text p {
   letter-spacing: 6px;
@@ -338,6 +433,24 @@ section {
   height: 25px;
 }
 
+@media (min-width: 768px) {
+  #june-big-title-section-doula-image {
+    position: absolute;
+    border: 20px solid #fef7f2;
+    height: 500px !important;
+    width: 300px;
+    z-index: 2;
+    left: -150px;
+    border-radius: 50rem !important;
+  }
+
+  #june-bug-tile-section-bg-image {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../images/woman-facing-away-in-mirror.jpg");
+  }
+}
 @media (min-width: 992px) {
   .about-me-item-wrapper {
     height: 70vh !important;
