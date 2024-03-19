@@ -6,6 +6,10 @@
   line-height: normal !important;
 }
 
+h1 {
+  line-height: normal;
+}
+
 /* END BOOTSTRAP OVERRIDES */
 /* START FONT STYLES */
 @font-face {
@@ -61,31 +65,29 @@ section {
   background-color: #fef7f2;
 }
 
-#title-section {
-  background-color: #fef7f2;
-}
-#title-section .navbar {
+.navbar {
+  background: transparent;
   text-transform: uppercase;
   color: #cd9494 !important;
   z-index: 100;
   letter-spacing: 6px;
 }
-#title-section .navbar #june-bug-logo {
+.navbar #june-bug-logo {
   max-width: 80px;
 }
-#title-section .navbar .navbar-brand {
+.navbar .navbar-brand {
   color: #cd9494;
 }
-#title-section .navbar .line-vertical {
+.navbar .line-vertical {
   border-right: 1.75px solid #cd9494;
   height: 30px;
 }
-#title-section .navbar .nav-link {
+.navbar .nav-link {
   color: #cd9494;
   font-size: 1em;
   width: 135px;
 }
-#title-section .navbar .nav-link:after {
+.navbar .nav-link:after {
   content: "";
   position: absolute;
   width: 0%;
@@ -94,100 +96,104 @@ section {
   transition: all 0.3s ease;
   bottom: 25%;
 }
-#title-section .navbar .nav-link:hover::after {
+.navbar .nav-link:hover::after {
   width: 114px;
   height: 1px;
   background-color: #cd9494;
 }
 @media (max-width: 1182px) {
-  #title-section .navbar .letter-1 {
+  .navbar .letter-1 {
     color: #fff !important;
   }
 }
 @media (max-width: 1158px) {
-  #title-section .navbar .letter-2 {
+  .navbar .letter-2 {
     color: #fff !important;
   }
 }
 @media (max-width: 1129px) {
-  #title-section .navbar .letter-3 {
+  .navbar .letter-3 {
     color: #fff !important;
   }
 }
 @media (max-width: 1100px) {
-  #title-section .navbar .letter-4 {
+  .navbar .letter-4 {
     color: #fff !important;
   }
 }
 @media (max-width: 1074px) {
-  #title-section .navbar .letter-5 {
+  .navbar .letter-5 {
     color: #fff !important;
   }
 }
 @media (max-width: 1042px) {
-  #title-section .navbar .letter-6 {
+  .navbar .letter-6 {
     color: #fff !important;
   }
 }
 @media (max-width: 1013px) {
-  #title-section .navbar .letter-7 {
+  .navbar .letter-7 {
     color: #fff !important;
   }
 }
 @media (max-width: 917px) {
-  #title-section .navbar .letter-8 {
+  .navbar .letter-8 {
     color: #fff !important;
   }
 }
 @media (max-width: 885px) {
-  #title-section .navbar .letter-9 {
+  .navbar .letter-9 {
     color: #fff !important;
   }
 }
 @media (max-width: 859px) {
-  #title-section .navbar .letter-10 {
+  .navbar .letter-10 {
     color: #fff !important;
   }
 }
 @media (max-width: 839px) {
-  #title-section .navbar .letter-11 {
+  .navbar .letter-11 {
     color: #fff !important;
   }
 }
 @media (max-width: 813px) {
-  #title-section .navbar .letter-12 {
+  .navbar .letter-12 {
     color: #fff !important;
   }
 }
 @media (max-width: 791px) {
-  #title-section .navbar .letter-13 {
+  .navbar .letter-13 {
     color: #fff !important;
   }
 }
 @media (max-width: 767px) {
-  #title-section .navbar .letter-1,
-#title-section .navbar .letter-2,
-#title-section .navbar .letter-3,
-#title-section .navbar .letter-4,
-#title-section .navbar .letter-5,
-#title-section .navbar .letter-6,
-#title-section .navbar .letter-7,
-#title-section .navbar .letter-8,
-#title-section .navbar .letter-9,
-#title-section .navbar .letter-10,
-#title-section .navbar .letter-11,
-#title-section .navbar .letter-12,
-#title-section .navbar .letter-13,
-#title-section .navbar .letter-14 {
+  .navbar .letter-1,
+.navbar .letter-2,
+.navbar .letter-3,
+.navbar .letter-4,
+.navbar .letter-5,
+.navbar .letter-6,
+.navbar .letter-7,
+.navbar .letter-8,
+.navbar .letter-9,
+.navbar .letter-10,
+.navbar .letter-11,
+.navbar .letter-12,
+.navbar .letter-13,
+.navbar .letter-14 {
     color: #cd9494 !important;
   }
 }
-#title-section .navbar a.position-absolute {
+.navbar a.position-absolute {
   left: 14px;
 }
+
+#title-section {
+  background-color: #fef7f2;
+}
 #title-section #june-big-title-section-doula-image {
-  height: 300px;
-  width: 300px;
+  height: 150px;
+  width: 150px;
   background-image: url(../../images/aubrey-smiling-forward.jpg);
   background-size: cover;
   background-position: center;
@@ -195,6 +201,7 @@ section {
 }
 #title-section #june-bug-title-section-text-container {
   top: 0;
+  z-index: 3;
 }
 #title-section #june-bug-title-section-text-container #june-bug-title-section-text {
   color: #cd9494;
@@ -206,6 +213,7 @@ section {
   display: block;
 }
 #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+  font-size: 2em;
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
@@ -433,7 +441,23 @@ section {
   height: 25px;
 }
 
+@media (min-width: 576px) {
+  #june-big-title-section-doula-image {
+    height: 300px !important;
+    width: 300px !important;
+  }
+
+  #june-bug-title-section-text-container h1 {
+    font-size: 2.5em;
+  }
+}
 @media (min-width: 768px) {
+  #june-bug-title-section-text-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
   #june-big-title-section-doula-image {
     position: absolute;
     border: 20px solid #fef7f2;
