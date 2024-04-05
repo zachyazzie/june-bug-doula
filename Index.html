@@ -20,9 +20,9 @@
       content="Welcome to Yazzie Doula Services, providing birth support in Helena, Montana."
     />
     <script src="src/site.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-  <header>
+  <header class="container-xl-custom">
     <nav class="navbar navbar-expand-md pt-3 position-absolute">
       <div class="pr-4">
         <img
@@ -77,37 +77,18 @@
       </div>
     </nav>
   </header>
-  <body>
+  <body class="d-flex flex-column align-items-center">
     <section
       id="title-section"
-      class="position-relative d-flex justify-content-center flex-column flex-md-row"
+      class="container-fluid-custom p-0 d-flex justify-content-center pt-5 pt-sm-0"
     >
-      <div class="container-fluid position-relative">
-        <div class="row h-100">
-          <div class="col-md-7 d-none d-md-block"></div>
+      <div class="row m-auto w-100 h-100 position-relative">
+        <div class="col-sm-6 col-md-7 pt-5 pt-sm-0">
           <div
-            id="june-bug-tile-section-bg-image"
-            class="col-md-5 p-0 d-flex align-items-center justify-content-center mb-4"
+            id="title-section-text"
+            class="d-flex flex-column justify-content-center align-items-center align-items-md-end h-100 text-center text-md-left pl-3 pr-3 pl-md-0 pr-md-0"
           >
-            <div id="june-big-title-section-doula-image" class=""></div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="june-bug-title-section-text-container"
-        class="d-flex align-items-center justify-content-center"
-      >
-        <div
-          class="container-xl-custom d-flex align-items-center justify-content-center pl-md-3 pr-md-3"
-        >
-          <div
-            class="row pl-md-3 pr-md-3 w-100 justify-content-center justify-content-md-start"
-          >
-            <div
-              id="june-bug-title-section-text"
-              class="d-flex flex-column justify-content-center align-items-center align-items-md-start h-100 text-center text-md-left pl-3 pr-3 pl-md-0 pr-md-0"
-            >
+            <div id="title-section-text-inner">
               <h1 class="m-0 d-sm-none">Discover the birth you deserve</h1>
               <h1 class="m-0 d-none d-sm-block" aria="hidden">
                 Discover<br />
@@ -115,7 +96,7 @@
                 you<br />
                 deserve
               </h1>
-              <span class="line mb-3" aria="hidden"></span>
+              <span class="line mb-3 mt-3 mt-md-0" aria="hidden"></span>
               <p class="poppins-medium mb-2 text-larger">Aubrey Yazzie</p>
               <p class="poppins-regular m-0 hero-subtitle">
                 Birth Doula <br />and online birth <span>consultant</span>
@@ -123,8 +104,16 @@
             </div>
           </div>
         </div>
+
+        <div
+          class="h-100 w-100 d-flex align-items-center justify-content-center d-md-block col-sm-6 col-md-5 p-0"
+        >
+          <div id="title-section-bg-image"></div>
+          <div id="title-section-doula-image"></div>
+        </div>
       </div>
     </section>
+
     <section
       id="about-me-section"
       class="container-fluid d-flex justify-content-center"
@@ -139,12 +128,12 @@
           <div id="about-header" class="col-12 d-flex justify-content-end">
             <h2 class="d-flex align-items-center m-0">About</h2>
           </div>
-          <div class="col-6 d-lg-none"></div>
+          <div class="d-none d-sm-block col-6 d-lg-none"></div>
           <div
-            class="col-6 col-lg-3 d-flex align-items-center about-me-item-wrapper"
+            class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center about-me-item-wrapper"
           >
             <div class="text-container">
-              <h3>Who am I?</h3>
+              <h3>Who <span class="text-nowrap">am I?</span></h3>
               <p class="open-sans-regular">
                 Hi! I'm so glad you're here. I'm Aubrey - a mom of two wild
                 boys, a lover of 80s dance workouts, and a DONA trained birth
@@ -153,15 +142,15 @@
               </p>
             </div>
           </div>
-          <div class="col-6 col-lg-6 about-me-item-wrapper"></div>
+          <div class="d-none d-sm-block col-sm-6 about-me-item-wrapper"></div>
           <div
             id="about-me-img-container"
-            class="col-6 col-lg-5 d-flex align-items-end justify-content-center about-me-item-wrapper"
+            class="d-none col-6 col-lg-5 d-sm-flex align-items-end justify-content-center about-me-item-wrapper"
           >
             <div id="about-me-img"></div>
           </div>
           <div
-            class="col-6 col-lg-3 d-flex align-items-center about-me-item-wrapper"
+            class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center about-me-item-wrapper"
           >
             <div class="text-container">
               <h3>Why a june bug?</h3>
@@ -177,7 +166,7 @@
     </section>
     <section
       id="why-section"
-      class="container-fluid d-flex justify-content-center"
+      class="container-fluid d-none justify-content-center d-none"
     >
       <div class="container-xl-custom w-100">
         <div class="row">
@@ -216,7 +205,7 @@
     </section>
     <section
       id="pricing-section"
-      class="container-fluid d-flex justify-content-center"
+      class="container-fluid d-none justify-content-center d-none"
     >
       <div class="container-xl-custom">
         <div class="row position-relative h-100">
@@ -298,7 +287,7 @@
     </section>
     <section
       id="contact-section"
-      class="container-fluid d-flex justify-content-center"
+      class="container-fluid d-none justify-content-center d-none"
     >
       <div class="container-xl-custom">
         <div class="row p-4">

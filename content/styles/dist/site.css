@@ -6,6 +6,13 @@
   line-height: normal !important;
 }
 
+.container-fluid-custom {
+  max-width: 1920px !important;
+  height: 100%;
+  width: 100%;
+  line-height: normal !important;
+}
+
 h1 {
   line-height: normal;
 }
@@ -73,7 +80,7 @@ section {
   letter-spacing: 6px;
 }
 .navbar #june-bug-logo {
-  max-width: 80px;
+  max-width: 40px;
 }
 .navbar .navbar-brand {
   color: #cd9494;
@@ -191,7 +198,7 @@ section {
 #title-section {
   background-color: #fef7f2;
 }
-#title-section #june-big-title-section-doula-image {
+#title-section #title-section-doula-image {
   height: 150px;
   width: 150px;
   background-image: url(../../images/aubrey-smiling-forward.jpg);
@@ -199,53 +206,58 @@ section {
   background-position: center;
   border-radius: 50rem;
 }
-#title-section #june-bug-title-section-text-container {
-  top: 0;
-  z-index: 3;
-}
-#title-section #june-bug-title-section-text-container #june-bug-title-section-text {
+#title-section #title-section-text {
   color: #cd9494;
   text-transform: uppercase;
 }
-#title-section #june-bug-title-section-text-container #june-bug-title-section-text .line {
+#title-section #title-section-text #title-section-text-inner .line {
   border-bottom: 1px solid #cd9494;
-  width: 200px;
   display: block;
 }
-#title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+#title-section #title-section-text #title-section-text-inner h1 {
   font-size: 2em;
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-#title-section #june-bug-title-section-text-container #june-bug-title-section-text .hero-subtitle {
+#title-section #title-section-text #title-section-text-inner .hero-subtitle {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 860px) {
-  #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+@media (min-width: 847px) {
+  #title-section #title-section-text #title-section-text-inner h1 {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 969px) {
+  #title-section #title-section-text #title-section-text-inner h1 {
     font-size: 3em;
   }
 }
-@media (min-width: 1050px) {
-  #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+@media (min-width: 1062px) {
+  #title-section #title-section-text #title-section-text-inner h1 {
+    font-size: 3.5em;
+  }
+}
+@media (min-width: 1155px) {
+  #title-section #title-section-text #title-section-text-inner h1 {
     font-size: 4em;
   }
-  #title-section #june-bug-title-section-text-container #june-bug-title-section-text .hero-subtitle {
+  #title-section #title-section-text #title-section-text-inner .hero-subtitle {
     display: block;
   }
 }
-@media (min-width: 1230px) {
-  #title-section #june-bug-title-section-text-container #june-bug-title-section-text h1 {
+@media (min-width: 1340px) {
+  #title-section #title-section-text #title-section-text-inner h1 {
     font-size: 5em;
   }
 }
-#title-section #june-bug-title-section-text-container #june-bug-title-section-text p {
+#title-section #title-section-text #title-section-text-inner p {
   letter-spacing: 6px;
 }
-#title-section #june-bug-title-section-text-container #june-bug-title-section-text .text-larger {
+#title-section #title-section-text #title-section-text-inner .text-larger {
   font-size: 1.5em;
 }
-#title-section #june-bug-title-section-text-container #june-big-title-setion-doula-image {
+#title-section #title-section-doula-image {
   border: 20px solid #fef7f2;
   height: 500px;
   width: 300px;
@@ -260,14 +272,14 @@ section {
 #about-me-section #about-me-section-bg .cream-bar-top,
 #about-me-section #about-me-section-bg .cream-bar-bottom {
   background-color: #fef7f2;
-  height: 15vh;
+  height: 10vh;
 }
 #about-me-section #about-me-section-bg .blush-bar {
   background-color: #e8d1c7;
-  height: 70vh;
+  height: 80vh;
 }
 #about-me-section .container-xl-custom .row #about-header {
-  height: 15vh;
+  height: 10vh;
 }
 #about-me-section .container-xl-custom .row #about-header h2 {
   color: #cd9494;
@@ -277,23 +289,23 @@ section {
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-#about-me-section .container-xl-custom .row .col-6 {
-  height: 35vh;
+#about-me-section .container-xl-custom .row .col-sm-6 {
+  height: 40vh;
 }
-#about-me-section .container-xl-custom .row .col-6 .text-container {
+#about-me-section .container-xl-custom .row .col-sm-6 .text-container {
   letter-spacing: 2px;
+  max-width: 300px;
 }
-#about-me-section .container-xl-custom .row .col-6 .text-container h3 {
+#about-me-section .container-xl-custom .row .col-sm-6 .text-container h3 {
+  font-size: 1.5em;
   color: #a48079;
   line-height: normal !important;
   text-transform: uppercase;
-  font-size: 2.5em;
   font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-#about-me-section .container-xl-custom .row .col-6 .text-container p {
+#about-me-section .container-xl-custom .row .col-sm-6 .text-container p {
   color: #a48079;
-  font-size: 1.25em;
 }
 #about-me-section .container-xl-custom .row #about-me-img-container {
   position: absolute;
@@ -302,7 +314,6 @@ section {
 #about-me-section .container-xl-custom .row #about-me-img-container #about-me-img {
   border: 20px solid #fef7f2;
   border-bottom: none;
-  height: 80vh;
   width: 100%;
   background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
   background-size: cover;
@@ -442,23 +453,61 @@ section {
 }
 
 @media (min-width: 576px) {
-  #june-big-title-section-doula-image {
-    height: 300px !important;
-    width: 300px !important;
+  #june-bug-logo {
+    max-width: 70px !important;
   }
 
-  #june-bug-title-section-text-container h1 {
-    font-size: 2.5em;
+  #title-section {
+    height: 100vh;
+  }
+
+  #title-section-doula-image {
+    top: 25%;
+    border: 20px solid #fef7f2;
+    height: 500px !important;
+    width: 300px;
+    z-index: 2;
+    border-radius: 50rem !important;
+  }
+
+  #about-me-section-bg {
+    height: 100vh;
+  }
+  #about-me-section-bg .cream-bar-top,
+#about-me-section-bg .cream-bar-bottom {
+    background-color: #fef7f2;
+    height: 10vh;
+  }
+  #about-me-section-bg .blush-bar {
+    background-color: #e8d1c7;
+    height: 80vh;
+  }
+
+  .container-xl-custom .row #about-header {
+    height: 10vh;
+  }
+  .container-xl-custom .row .col-sm-6 {
+    height: 40vh;
+  }
+  .container-xl-custom .row .col-sm-6 .text-container {
+    max-width: 10000px !important;
+  }
+  .container-xl-custom .row .col-sm-6 .text-container h3 {
+    font-size: 1.75em;
+  }
+  .container-xl-custom .row #about-me-img-container #about-me-img {
+    height: 85vh;
   }
 }
 @media (min-width: 768px) {
-  #june-bug-title-section-text-container {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  #title-section-text-inner {
+    padding-right: 182px;
+  }
+  #title-section-text-inner .line {
+    width: 200px;
   }
 
-  #june-big-title-section-doula-image {
+  #title-section-doula-image {
     position: absolute;
     border: 20px solid #fef7f2;
     height: 500px !important;
@@ -468,32 +517,44 @@ section {
     border-radius: 50rem !important;
   }
 
-  #june-bug-tile-section-bg-image {
+  #title-section-bg-image {
     height: 100vh;
-    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url("../../images/woman-facing-away-in-mirror.jpg");
   }
 }
 @media (min-width: 992px) {
-  .about-me-item-wrapper {
+  #about-me-section .about-me-item-wrapper {
     height: 70vh !important;
   }
-
-  #about-me-img-container {
-    position: absolute;
-    bottom: 0;
+  #about-me-section #about-me-section-bg {
+    height: 100vh;
+  }
+  #about-me-section #about-me-section-bg .cream-bar-top,
+#about-me-section #about-me-section-bg .cream-bar-bottom {
+    height: 15vh;
+  }
+  #about-me-section #about-me-section-bg .blush-bar {
+    height: 70vh;
+  }
+  #about-me-section .container-xl-custom .row #about-header {
+    height: 15vh;
+  }
+  #about-me-section .container-xl-custom .row .col-sm-6 {
+    height: 35vh;
+  }
+  #about-me-section .container-xl-custom .row .col-sm-6 h3 {
+    font-size: 2em !important;
+  }
+  #about-me-section .container-xl-custom .row .col-sm-6 p {
+    font-size: 1.25em;
+  }
+  #about-me-section .container-xl-custom #about-me-img-container {
     left: 29%;
   }
-  #about-me-img-container #about-me-img {
-    border: 20px solid #fef7f2;
-    border-bottom: none;
+  #about-me-section .container-xl-custom #about-me-img-container #about-me-img {
     height: 80vh;
-    width: 100%;
-    background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 50rem;
-    border-top-right-radius: 50rem;
   }
 }

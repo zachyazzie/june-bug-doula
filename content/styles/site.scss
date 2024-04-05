@@ -13,6 +13,13 @@ $blush: #e8d1c7;
   line-height: normal !important;
 }
 
+.container-fluid-custom {
+  max-width: 1920px !important;
+  height: 100%;
+  width: 100%;
+  line-height: normal !important;
+}
+
 h1 {
   line-height: normal;
 }
@@ -83,7 +90,7 @@ section {
   z-index: 100;
   letter-spacing: 6px;
   #june-bug-logo {
-    max-width: 80px;
+    max-width: 40px;
   }
   .navbar-brand {
     color: $dark-blush;
@@ -205,7 +212,7 @@ section {
 #title-section {
   background-color: $light-brown;
 
-  #june-big-title-section-doula-image {
+  #title-section-doula-image {
     height: 150px;
     width: 150px;
     background-image: url(../../images/aubrey-smiling-forward.jpg);
@@ -214,17 +221,12 @@ section {
     border-radius: 50rem;
   }
 
-  #june-bug-title-section-text-container {
-    top: 0;
-    z-index: 3;
-
-    #june-bug-title-section-text {
-      color: $dark-blush;
-      text-transform: uppercase;
-
+  #title-section-text {
+    color: $dark-blush;
+    text-transform: uppercase;
+    #title-section-text-inner {
       .line {
         border-bottom: 1px solid $dark-blush;
-        width: 200px;
         display: block;
       }
 
@@ -237,12 +239,22 @@ section {
         display: flex;
         flex-direction: column;
       }
-      @media (min-width: 860px) {
+      @media (min-width: 847px) {
+        h1 {
+          font-size: 2.5em;
+        }
+      }
+      @media (min-width: 969px) {
         h1 {
           font-size: 3em;
         }
       }
-      @media (min-width: 1050px) {
+      @media (min-width: 1062px) {
+        h1 {
+          font-size: 3.5em;
+        }
+      }
+      @media (min-width: 1155px) {
         h1 {
           font-size: 4em;
         }
@@ -250,7 +262,7 @@ section {
           display: block;
         }
       }
-      @media (min-width: 1230px) {
+      @media (min-width: 1340px) {
         h1 {
           font-size: 5em;
         }
@@ -262,14 +274,14 @@ section {
         font-size: 1.5em;
       }
     }
-    #june-big-title-setion-doula-image {
-      border: 20px solid $light-brown;
-      height: 500px;
-      width: 300px;
-      background-image: url(../../images/aubrey-smiling-forward.jpg);
-      background-size: cover;
-      background-position: center;
-    }
+  }
+  #title-section-doula-image {
+    border: 20px solid $light-brown;
+    height: 500px;
+    width: 300px;
+    background-image: url(../../images/aubrey-smiling-forward.jpg);
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -279,19 +291,19 @@ section {
     .cream-bar-top,
     .cream-bar-bottom {
       background-color: $light-brown;
-      height: 15vh;
+      height: 10vh;
     }
 
     .blush-bar {
       background-color: $blush;
-      height: 70vh;
+      height: 80vh;
     }
   }
 
   .container-xl-custom {
     .row {
       #about-header {
-        height: 15vh;
+        height: 10vh;
         h2 {
           color: $dark-blush;
           line-height: normal !important;
@@ -301,23 +313,24 @@ section {
           text-transform: uppercase;
         }
       }
-      .col-6 {
-        height: 35vh;
+      .col-sm-6 {
+        height: 40vh;
+
         .text-container {
           letter-spacing: 2px;
+          max-width: 300px;
 
           h3 {
+            font-size: 1.5em;
             color: $dark-brown;
             line-height: normal !important;
             text-transform: uppercase;
-            font-size: 2.5em;
             font-family: "Tan Mon Cheri", Arial, Helvetica, sans-serif;
             text-transform: uppercase;
           }
 
           p {
             color: $dark-brown;
-            font-size: 1.25em;
           }
         }
       }
@@ -329,7 +342,6 @@ section {
         #about-me-img {
           border: 20px solid $light-brown;
           border-bottom: none;
-          height: 80vh;
           width: 100%;
           background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
           background-size: cover;
@@ -506,26 +518,71 @@ section {
 }
 
 @media (min-width: 576px) {
-  #june-big-title-section-doula-image {
-    height: 300px !important;
-    width: 300px !important;
+  #june-bug-logo {
+    max-width: 70px !important;
   }
 
-  #june-bug-title-section-text-container {
-    h1 {
-      font-size: 2.5em;
+  #title-section {
+    height: 100vh;
+  }
+
+  #title-section-doula-image {
+    top: 25%;
+    border: 20px solid $light-brown;
+    height: 500px !important;
+    width: 300px;
+    z-index: 2;
+    border-radius: 50rem !important;
+  }
+
+  #about-me-section-bg {
+    height: 100vh;
+    .cream-bar-top,
+    .cream-bar-bottom {
+      background-color: $light-brown;
+      height: 10vh;
+    }
+
+    .blush-bar {
+      background-color: $blush;
+      height: 80vh;
+    }
+  }
+
+  .container-xl-custom {
+    .row {
+      #about-header {
+        height: 10vh;
+      }
+      .col-sm-6 {
+        height: 40vh;
+        .text-container {
+          max-width: 10000px !important;
+
+          h3 {
+            font-size: 1.75em;
+          }
+        }
+      }
+
+      #about-me-img-container {
+        #about-me-img {
+          height: 85vh;
+        }
+      }
     }
   }
 }
 
 @media (min-width: 768px) {
-  #june-bug-title-section-text-container {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  #title-section-text-inner {
+    padding-right: 182px;
+    .line {
+      width: 200px;
+    }
   }
 
-  #june-big-title-section-doula-image {
+  #title-section-doula-image {
     position: absolute;
     border: 20px solid $light-brown;
     height: 500px !important;
@@ -535,34 +592,56 @@ section {
     border-radius: 50rem !important;
   }
 
-  #june-bug-tile-section-bg-image {
+  #title-section-bg-image {
     height: 100vh;
-    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url("../../images/woman-facing-away-in-mirror.jpg");
   }
 }
 
 @media (min-width: 992px) {
-  .about-me-item-wrapper {
-    height: 70vh !important;
-  }
+  #about-me-section {
+    .about-me-item-wrapper {
+      height: 70vh !important;
+    }
+    #about-me-section-bg {
+      height: 100vh;
+      .cream-bar-top,
+      .cream-bar-bottom {
+        height: 15vh;
+      }
 
-  #about-me-img-container {
-    position: absolute;
-    bottom: 0;
-    left: 29%;
+      .blush-bar {
+        height: 70vh;
+      }
+    }
+    .container-xl-custom {
+      .row {
+        #about-header {
+          height: 15vh;
+        }
+        .col-sm-6 {
+          height: 35vh;
 
-    #about-me-img {
-      border: 20px solid $light-brown;
-      border-bottom: none;
-      height: 80vh;
-      width: 100%;
-      background-image: url(../../images/aubrey-smiling-hands-in-pockets.jpg);
-      background-size: cover;
-      background-position: center;
-      border-top-left-radius: 50rem;
-      border-top-right-radius: 50rem;
+          h3 {
+            font-size: 2em !important;
+          }
+
+          p {
+            font-size: 1.25em;
+          }
+        }
+      }
+
+      #about-me-img-container {
+        left: 29%;
+
+        #about-me-img {
+          height: 80vh;
+        }
+      }
     }
   }
 }
