@@ -17,6 +17,10 @@ h1 {
   line-height: normal;
 }
 
+.rounded-pill {
+  border-radius: 50rem;
+}
+
 /* END BOOTSTRAP OVERRIDES */
 /* START FONT STYLES */
 @font-face {
@@ -68,7 +72,6 @@ body {
 }
 
 section {
-  min-height: 100vh;
   background-color: #fef7f2;
 }
 
@@ -266,20 +269,12 @@ section {
   background-position: center;
 }
 
-#about-me-section #about-me-section-bg {
-  height: 100vh;
-}
 #about-me-section #about-me-section-bg .cream-bar-top,
 #about-me-section #about-me-section-bg .cream-bar-bottom {
   background-color: #fef7f2;
-  height: 10vh;
 }
 #about-me-section #about-me-section-bg .blush-bar {
   background-color: #e8d1c7;
-  height: 80vh;
-}
-#about-me-section .container-xl-custom .row #about-header {
-  height: 10vh;
 }
 #about-me-section .container-xl-custom .row #about-header h2 {
   color: #cd9494;
@@ -290,14 +285,14 @@ section {
   text-transform: uppercase;
 }
 #about-me-section .container-xl-custom .row .col-sm-6 {
-  height: 40vh;
+  background-color: #e8d1c7;
 }
 #about-me-section .container-xl-custom .row .col-sm-6 .text-container {
   letter-spacing: 2px;
   max-width: 300px;
 }
 #about-me-section .container-xl-custom .row .col-sm-6 .text-container h3 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #a48079;
   line-height: normal !important;
   text-transform: uppercase;
@@ -324,36 +319,39 @@ section {
 
 #why-section {
   background-color: #fef7f2;
-  height: 100vh;
 }
-#why-section .row .col-12 {
-  height: 80vh;
+#why-section .row .col-12 .row {
+  justify-content: center;
 }
 #why-section .row .col-12 .row #june-bug-why-section-image {
-  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  height: 350px;
+  width: 350px;
+  z-index: 3;
   border: 20px solid #fef7f2;
-  height: 100%;
   background-image: url(../../images/woman-holding-belly.jpg);
   background-size: cover;
   background-position: center;
 }
-#why-section .row .col-12 .row .col-8 {
-  z-index: 2;
+#why-section .row .col-12 .row .col-md-8 {
   width: 100%;
-  height: 100%;
-  right: 0;
+  padding-bottom: 300px;
 }
-#why-section .row .col-12 .row .col-8 .text-container {
-  max-width: 700px;
+#why-section .row .col-12 .row .col-md-8 .text-container {
   color: #fef7f2;
+  background-color: #d1a299;
+  height: 100%;
+  width: 100%;
+  border-radius: 5em;
 }
-#why-section .row .col-12 .row .col-8 .text-container h3 {
-  font-size: 3.25em;
+#why-section .row .col-12 .row .col-md-8 .text-container h2 {
+  font-size: 2em;
 }
-#why-section .row .col-12 .row .col-8 .text-container p {
-  font-size: 1.25em;
+#why-section .row .col-12 .row .col-md-8 .text-container p {
+  font-size: 1em;
 }
-#why-section .row .col-12 .row .col-10 .bg-container {
+#why-section .row .col-12 .row .col-md-10 .bg-container {
   background-color: #d1a299;
   height: 100%;
   width: 100%;
@@ -361,8 +359,14 @@ section {
   border-bottom-right-radius: 5em;
 }
 
+#pricing-section .container-xl-custom .row #pricing-header h2 {
+  color: #cd9494;
+  line-height: normal !important;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
 #pricing-section .container-xl-custom .row .bg-color-container {
-  height: 375px;
+  height: 325px;
 }
 #pricing-section .container-xl-custom .row .bg-color-container .bg-color {
   background-color: #e8d1c7;
@@ -372,34 +376,60 @@ section {
 #pricing-section .container-xl-custom .row .col-12 .row .col-12 {
   color: #fff;
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-12 h3 {
-  font-size: 2.75em;
+#pricing-section .container-xl-custom .row .col-12 .row .col-12 h2 {
+  font-size: 1rem;
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 {
+#pricing-section h3 {
+  color: #fff;
+  font-size: 1.25em;
+  text-align: center;
+}
+@media (min-width: 450px) {
+  #pricing-section h3 {
+    font-size: 1.75em !important;
+  }
+}
+#pricing-section .col-md-4 {
   color: #a48079;
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 p {
-  font-size: 1.25em;
+#pricing-section .col-md-4 h4 {
+  font-size: 1em;
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-1,
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-2,
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-3 {
+#pricing-section .col-md-4 p {
+  font-size: 1em;
+}
+#pricing-section .col-md-4 #pricing-img-1,
+#pricing-section .col-md-4 #pricing-img-2,
+#pricing-section .col-md-4 #pricing-img-3 {
   z-index: 2;
-  border: 20px solid #fef7f2;
-  height: 300px;
+  border: 10px solid #fef7f2;
+  height: 200px;
   width: 200px;
-  background-image: url(../../images/woman-laying-on-side.jpg);
+  border-radius: 50px;
   background-size: cover;
   background-position: center;
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-1 {
+#pricing-section .col-md-4 #pricing-img-1 {
   background-image: url(../../images/woman-laying-on-side.jpg);
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-2 {
+#pricing-section .col-md-4 #pricing-img-2 {
   background-image: url(../../images/woman-receiving-support.jpg);
 }
-#pricing-section .container-xl-custom .row .col-12 .row .col-md-4 #pricing-img-3 {
+#pricing-section .col-md-4 #pricing-img-3 {
   background-image: url(../../images/woman-in-online-meeting.jpg);
+}
+#pricing-section .carousel-control-next,
+#pricing-section .carousel-control-prev {
+  top: -300px !important;
+}
+#pricing-section .carousel-indicators {
+  bottom: -30px;
+}
+#pricing-section .carousel-indicators li {
+  background-color: #e8d1c7 !important;
+}
+#pricing-section .carousel-indicators .active {
+  background-color: #a48079 !important;
 }
 
 #contact-section .text-right .mon-cheri {
@@ -498,6 +528,30 @@ section {
   .container-xl-custom .row #about-me-img-container #about-me-img {
     height: 85vh;
   }
+
+  #pricing-section .bg-color-container {
+    height: 375px !important;
+  }
+  #pricing-section .col-12 {
+    color: #fff;
+  }
+  #pricing-section .col-12 h2 {
+    font-size: 1rem;
+  }
+  #pricing-section .col-12 h3 {
+    font-size: 2.25em !important;
+  }
+  #pricing-section .col-md-4 #pricing-img-1,
+#pricing-section .col-md-4 #pricing-img-2,
+#pricing-section .col-md-4 #pricing-img-3 {
+    border: 15px solid #fef7f2;
+    height: 250px !important;
+    width: 250px !important;
+  }
+  #pricing-section .carousel-control-next,
+#pricing-section .carousel-control-prev {
+    top: -200px !important;
+  }
 }
 @media (min-width: 768px) {
   #title-section-text-inner {
@@ -524,6 +578,59 @@ section {
     background-size: cover;
     background-image: url("../../images/woman-facing-away-in-mirror.jpg");
   }
+
+  section {
+    min-height: 100vh;
+  }
+
+  #why-section {
+    height: 100vh;
+  }
+  #why-section .col-12 {
+    height: 80vh;
+  }
+  #why-section .col-12 .row {
+    align-items: center;
+    justify-content: revert !important;
+  }
+  #why-section .col-12 .row #june-bug-why-section-image {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  #why-section .col-12 .row .col-md-8 {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+  }
+  #why-section .col-12 .row .col-md-8 .text-container {
+    max-width: 425px !important;
+    background-color: revert !important;
+    border-radius: none !important;
+  }
+  #why-section .col-12 .row .col-md-8 .text-container h2 {
+    font-size: 2.5em !important;
+  }
+  #why-section .col-12 .row .col-md-8 .text-container p {
+    font-size: 1.25em !important;
+  }
+
+  #pricing-section h3 {
+    text-align: left !important;
+  }
+  #pricing-section .col-md-4 h4 {
+    font-size: 1em;
+  }
+  #pricing-section .col-md-4 p {
+    font-size: 1em;
+  }
+  #pricing-section .col-md-4 #pricing-img-1,
+#pricing-section .col-md-4 #pricing-img-2,
+#pricing-section .col-md-4 #pricing-img-3 {
+    border: 15px solid #fef7f2;
+    height: 250px !important;
+    width: 150px !important;
+    border-radius: 50rem !important;
+  }
 }
 @media (min-width: 992px) {
   #about-me-section .about-me-item-wrapper {
@@ -542,6 +649,13 @@ section {
   #about-me-section .container-xl-custom .row #about-header {
     height: 15vh;
   }
+  #about-me-section .container-xl-custom .row #about-me-text-section-left {
+    right: -50px;
+    z-index: 2;
+  }
+  #about-me-section .container-xl-custom .row #about-me-text-section-right {
+    left: -50px;
+  }
   #about-me-section .container-xl-custom .row .col-sm-6 {
     height: 35vh;
   }
@@ -556,5 +670,39 @@ section {
   }
   #about-me-section .container-xl-custom #about-me-img-container #about-me-img {
     height: 80vh;
+  }
+
+  #why-section .col-12 .row .text-container {
+    max-width: 550px !important;
+  }
+  #why-section .col-12 .row .text-container h2 {
+    font-size: 2.5em !important;
+  }
+  #why-section .col-12 .row .text-container p {
+    font-size: 1.25em !important;
+  }
+
+  #pricing-section h3 {
+    font-size: 2.75em !important;
+  }
+  #pricing-section .col-md-4 h4 {
+    font-size: 1.25em !important;
+  }
+  #pricing-section .col-md-4 p {
+    font-size: 1.25em !important;
+  }
+  #pricing-section .col-md-4 #pricing-img-1,
+#pricing-section .col-md-4 #pricing-img-2,
+#pricing-section .col-md-4 #pricing-img-3 {
+    height: 300px !important;
+    width: 200px !important;
+  }
+}
+@media (min-width: 1200px) {
+  #why-section .col-12 .row .text-container {
+    max-width: 700px !important;
+  }
+  #why-section .col-12 .row .text-container h2 {
+    font-size: 3em !important;
   }
 }
