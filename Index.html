@@ -136,9 +136,12 @@
 
     <section
       id="about-me-section"
-      class="container-fluid d-flex justify-content-center"
+      class="container-fluid d-flex justify-content-center pt-3 pt-sm-0"
     >
-      <div id="about-me-section-bg" class="row position-absolute w-100">
+      <div
+        id="about-me-section-bg"
+        class="d-none d-md-block row position-absolute w-100"
+      >
         <div class="col-12 cream-bar-top"></div>
         <div class="col-12 blush-bar"></div>
         <div class="col-12 cream-bar-bottom"></div>
@@ -148,7 +151,7 @@
           <div id="about-header" class="col-12 pr-5 d-flex justify-content-end">
             <h2 class="d-flex align-items-center m-0">About</h2>
           </div>
-          <div class="d-none d-sm-block col-6 d-lg-none"></div>
+          <div class="d-none d-sm-block col-sm-6 d-lg-none"></div>
           <div
             id="about-me-text-section-left"
             class="col-sm-6 col-lg-3 pt-5 pt-sm-0 pb-3 pb-sm-0 d-flex align-items-center justify-content-center about-me-item-wrapper"
@@ -245,8 +248,8 @@
 
           <div class="col-12 h-100 p-3 p-md-5">
             <div class="row pt-5 pb-5 pl-md-5 pr-md-5">
-              <div class="col-12 pb-3">
-                <h3 class="mon-cheri">Pick your service</h3>
+              <div class="col-12 pb-md-3">
+                <h3 class="mon-cheri m-0">Pick your service</h3>
               </div>
               <div
                 class="col-md-4 d-none d-md-flex align-items-center flex-column"
@@ -416,39 +419,48 @@
       class="container-fluid d-flex justify-content-center"
     >
       <div class="container-xl-custom">
-        <div class="row p-4">
-          <div class="col-12 text-right">
-            <p class="mon-cheri">Contact</p>
+        <div class="row">
+          <div
+            id="contact-header"
+            class="col-12 pr-5 pb-3 d-flex justify-content-end"
+          >
+            <h2 class="mon-cheri d-flex align-items-center m-0">Contact</h2>
           </div>
           <div class="col-12 position-relative pl-5 pr-5">
-            <div class="row position-relative content-section-info-wrapper">
-              <div class="col-10">
+            <div
+              class="row m-auto position-relative justify-content-center content-section-info-wrapper"
+            >
+              <div
+                class="col-sm-4 p-4 p-sm-0 d-flex justify-content-center d-sm-block"
+              >
+                <div id="june-bug-contact-section-image" class=""></div>
+              </div>
+              <div class="col-sm-10">
                 <div
                   id="contact-section-info-container"
-                  class="row flex-column p-5 justify-content-center"
+                  class="row flex-column pt-5 pl-3 pr-3 pb-5 pl-sm-4 pr-sm-5 pt-sm-5 pl-md-5 justify-content-center"
                 >
                   <p class="mon-cheri contact-heading-sm">Let's work</p>
                   <p class="mon-cheri contact-heading-lg">together</p>
-                  <p class="open-sans-regular">
-                    Call or email me to schedule a free "get<br />
-                    to know you" appointment
+                  <p class="open-sans-regular m-0">
+                    Call or email me to schedule a free "get to know you"
+                    appointment
                   </p>
                 </div>
               </div>
-              <div class="col-4 position-absolute">
-                <div id="june-bug-contact-section-image" class=""></div>
-              </div>
             </div>
           </div>
-          <div class="col-12 pt-5">
-            <footer class="d-flex justify-content-between p-4">
-              <a href="tel:8016965156" class="open-sans-regular"
+          <div class="col-12 pt-5 pb-5">
+            <footer
+              class="d-flex flex-column flex-md-row align-items-center justify-content-between p-4"
+            >
+              <a href="tel:8016965156" class="open-sans-regular mb-3 mb-md-0"
                 >(801) 696-5157</a
               >
               <a
-                href="mailto:aubrey.junebug.doula@gmail.com"
-                class="open-sans-regular"
-                >aubrey.junebug.doula@gmail.com</a
+                href="mailto:aubrey@junebugdoula.com"
+                class="open-sans-regular mb-3 mb-md-0"
+                >aubrey@junebugdoula.com</a
               >
               <div class="d-flex align-items-center">
                 <div

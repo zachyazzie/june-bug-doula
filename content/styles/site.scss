@@ -365,8 +365,8 @@ section {
         #june-bug-why-section-image {
           position: absolute;
           bottom: 0px;
-          height: 350px;
-          width: 350px;
+          height: 300px;
+          width: 300px;
           z-index: 3;
           border: 20px solid $light-brown;
           background-image: url(../../images/woman-holding-belly.jpg);
@@ -376,7 +376,7 @@ section {
 
         .col-md-8 {
           width: 100%;
-          padding-bottom: 300px;
+          padding-bottom: 250px;
 
           .text-container {
             color: $light-brown;
@@ -384,8 +384,12 @@ section {
             height: 100%;
             width: 100%;
             border-radius: 5em;
+            p:first-child {
+              text-align: center;
+            }
             h2 {
-              font-size: 2em;
+              text-align: center;
+              font-size: 1.75em;
             }
             p {
               font-size: 1em;
@@ -502,44 +506,46 @@ section {
 }
 
 #contact-section {
-  .text-right .mon-cheri {
+  h2 {
+    font-size: 1.5em;
     color: $medium-blush;
   }
   .content-section-info-wrapper {
-    .col-10 {
+    .col-sm-10 {
       #contact-section-info-container {
         background-color: $medium-blush;
         color: #fff;
         border-radius: 2em;
-        height: 70vh;
 
         .contact-heading-sm {
-          font-size: 2em;
+          text-align: center;
+          font-size: 1.25em;
         }
         .contact-heading-lg {
-          font-size: 5em;
+          text-align: center;
+          font-size: 1.75em;
         }
 
         .open-sans-regular {
+          text-align: center;
           font-size: 1.25em;
           letter-spacing: 2px;
           text-transform: uppercase;
         }
       }
     }
-    .col-4 {
+    .col-sm-4 {
       right: 0;
       top: 13%;
+      z-index: 2;
 
       #june-bug-contact-section-image {
-        border: 20px solid $light-brown;
-        height: 50vh;
-        width: 100%;
+        height: 200px;
+        width: 200px;
         background-image: url(../../images/aubrey-smiling-looking-up.jpg);
         background-size: cover;
         background-position: center;
-        border-top-left-radius: 50rem;
-        border-top-right-radius: 50rem;
+        border-radius: 50rem;
       }
     }
   }
@@ -619,6 +625,18 @@ section {
     }
   }
 
+  #why-section {
+    .text-container {
+      p:first-child {
+        text-align: left !important;
+      }
+      h2 {
+        text-align: left !important;
+        font-size: 2em !important;
+      }
+    }
+  }
+
   #pricing-section {
     .bg-color-container {
       height: 375px !important;
@@ -646,6 +664,44 @@ section {
     .carousel-control-next,
     .carousel-control-prev {
       top: -200px !important;
+    }
+  }
+
+  #contact-section {
+    #contact-section-info-container {
+      height: 70vh;
+
+      .contact-heading-sm {
+        text-align: left !important;
+        font-size: 1.5em !important;
+      }
+      .contact-heading-lg {
+        text-align: left !important;
+        font-size: 2.25em !important;
+      }
+
+      .open-sans-regular {
+        text-align: left !important;
+        font-size: 1em !important;
+        max-width: 300px !important;
+      }
+    }
+
+    .col-sm-4 {
+      right: 0;
+      top: 13%;
+      position: absolute;
+
+      #june-bug-contact-section-image {
+        border: 15px solid $light-brown;
+        border-right: none !important;
+        height: 50vh !important;
+        width: 100% !important;
+        border-top-left-radius: 50rem !important;
+        border-top-right-radius: 50rem !important;
+        border-bottom-left-radius: 0rem !important;
+        border-bottom-right-radius: 0rem !important;
+      }
     }
   }
 }
@@ -733,6 +789,26 @@ section {
         height: 250px !important;
         width: 150px !important;
         border-radius: 50rem !important;
+      }
+    }
+  }
+
+  #contact-section {
+    .contact-heading-sm {
+      font-size: 2em !important;
+    }
+    .contact-heading-lg {
+      font-size: 3em !important;
+    }
+
+    .open-sans-regular {
+      font-size: 1em !important;
+      max-width: 375px !important;
+    }
+
+    .col-sm-4 {
+      #june-bug-contact-section-image {
+        border: 20px solid $light-brown !important;
       }
     }
   }
@@ -828,6 +904,20 @@ section {
       }
     }
   }
+
+  #contact-section {
+    .contact-heading-sm {
+      font-size: 2em !important;
+    }
+    .contact-heading-lg {
+      font-size: 4em !important;
+    }
+
+    .open-sans-regular {
+      max-width: 455px !important;
+      font-size: 1em !important;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -842,6 +932,16 @@ section {
           }
         }
       }
+    }
+  }
+
+  #contact-section {
+    .contact-heading-lg {
+      font-size: 5em !important;
+    }
+
+    .open-sans-regular {
+      font-size: 1.25em !important;
     }
   }
 }
