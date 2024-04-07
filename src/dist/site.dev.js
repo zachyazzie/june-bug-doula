@@ -8,4 +8,7 @@ $(document).ready(function () {
 
     $("#title-section-bg-image").css("background-position-y", scrolledHeight * parallaxSpeed + "px");
   });
+  $(".navbar-toggler").click(function () {
+    $(this).find("#nav-icon1").toggleClass("open");
+  });
 });

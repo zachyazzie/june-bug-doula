@@ -9,4 +9,8 @@ $(document).ready(function () {
       scrolledHeight * parallaxSpeed + "px"
     );
   });
+
+  $(".navbar-toggler").click(function () {
+    $(this).find("#nav-icon1").toggleClass("open");
+  });
 });
