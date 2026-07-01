@@ -1,0 +1,80 @@
+---
+import { getImage } from "astro:assets";
+import type { Package } from "../data/packages";
+
+interface Props {
+  pkg: Package;
+  compact?: boolean;
+}
+
+const { pkg, compact = false } = Astro.props;
+const optimized = await getImage({ src: pkg.image, width: 500, format: "webp" });
+---
+
+<article class="pricing-card" data-compact={compact}>
+  <div class="pricing-card-image" style={`background-image: url(${optimized.src})`}></div>
+  <div class="pricing-card-body">
+    <h4 class="mon-cheri">{pkg.name}</h4>
+    <p class="price">${pkg.price}</p>
+    {!compact && <p class="open-sans-regular description">{pkg.description}</p>}
+    <a href={pkg.servicePageHref} class="open-sans-regular learn-more">Learn more</a>
+  </div>
+</article>
+
+<style>
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--dark-brown);
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .pricing-card-image {
+    height: 200px;
+    width: 200px;
+    border: 10px solid var(--light-brown);
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .pricing-card-body {
+    padding-top: 1.5rem;
+    max-width: 320px;
+  }
+
+  .price {
+    font-size: 1.1em;
+    margin: 0.25rem 0;
+  }
+
+  .description {
+    font-size: 0.95em;
+  }
+
+  .learn-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    color: var(--dark-blush);
+  }
+
+  @media (min-width: 576px) {
+    .pricing-card-image {
+      border-width: 15px;
+      height: 250px;
+      width: 250px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .pricing-card-image {
+      border-radius: 50rem;
+      height: 300px;
+      width: 200px;
+    }
+  }
+</style>

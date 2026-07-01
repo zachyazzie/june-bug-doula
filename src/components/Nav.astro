@@ -1,0 +1,233 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/junebug-logo.png";
+
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+const links: NavLink[] = [
+  { href: "/about/", label: "About" },
+  { href: "/pricing/", label: "Pricing" },
+  { href: "/service-area/", label: "Service Area" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+
+<header class="site-header">
+  <nav class="navbar">
+    <div class="navbar-wrapper">
+      <a href="/" class="brand">
+        <Image src={logo} alt="Junebug Doula Services Logo" width={44} />
+        <span class="poppins-semibold brand-name">Junebug</span>
+      </a>
+      <span class="line-vertical" aria-hidden="true"></span>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <div id="nav-icon1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {
+          links.map((link) => (
+            <li class="nav-item">
+              <a class="nav-link poppins-regular" href={link.href}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggler = document.querySelector<HTMLButtonElement>(".navbar-toggler");
+  const navMenu = document.getElementById("navbarNav");
+  toggler?.addEventListener("click", () => {
+    toggler.querySelector("#nav-icon1")?.classList.toggle("open");
+    navMenu?.classList.toggle("show");
+    const expanded = toggler.getAttribute("aria-expanded") === "true";
+    toggler.setAttribute("aria-expanded", String(!expanded));
+  });
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 100;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  .navbar {
+    text-transform: uppercase;
+    color: var(--dark-blush);
+    letter-spacing: 6px;
+  }
+
+  .navbar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--dark-blush);
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .line-vertical {
+    display: none;
+    border-right: 1.75px solid var(--dark-blush);
+    height: 30px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+  }
+
+  #nav-icon1 {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+  }
+
+  #nav-icon1 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--dark-blush);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon1 span:nth-child(1) {
+    top: 0px;
+  }
+
+  #nav-icon1 span:nth-child(2) {
+    top: 10.5px;
+  }
+
+  #nav-icon1 span:nth-child(3) {
+    top: 21px;
+  }
+
+  #nav-icon1.open span:nth-child(1) {
+    top: 10.5px;
+    transform: rotate(135deg);
+  }
+
+  #nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+
+  #nav-icon1.open span:nth-child(3) {
+    top: 10.5px;
+    transform: rotate(-135deg);
+  }
+
+  .navbar-collapse {
+    display: none;
+    background: var(--light-brown);
+    border-bottom: 1px solid var(--dark-blush);
+    padding: 1rem 0;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    color: var(--dark-blush);
+    font-size: 1em;
+  }
+
+  @media (min-width: 768px) {
+    .line-vertical {
+      display: block;
+    }
+
+    .navbar-toggler {
+      display: none;
+    }
+
+    .navbar-collapse {
+      display: block !important;
+      background: transparent;
+      border-bottom: none;
+      padding: 0;
+      margin-left: auto;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      display: block;
+      bottom: -6px;
+      transition: width 0.3s ease;
+      background-color: var(--dark-blush);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  }
+</style>

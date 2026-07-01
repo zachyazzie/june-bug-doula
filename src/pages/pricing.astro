@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PricingCard from "../components/PricingCard.astro";
+import { packages } from "../data/packages";
+import { siteConfig } from "../data/siteConfig";
+---
+
+<BaseLayout
+  title="Pricing"
+  description={`Transparent birth doula and online consultation pricing for ${siteConfig.serviceAreaRegion}.`}
+>
+  <section class="pricing-page container">
+    <p class="mon-cheri eyebrow">Pricing</p>
+    <h1 class="mon-cheri">Pick your service</h1>
+    <div class="pricing-grid">
+      {packages.map((pkg) => <PricingCard pkg={pkg} />)}
+    </div>
+    <p class="open-sans-regular note">
+      Questions about payment plans, insurance, or HSA/FSA reimbursement? See the <a href="/faq/">FAQ</a>{" "}
+      or <a href="/contact/">get in touch</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .pricing-page {
+    padding: 3rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    font-size: 1.1em;
+  }
+
+  .pricing-page h1 {
+    color: var(--dark-blush);
+    margin-bottom: 2rem;
+  }
+
+  .pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .note {
+    margin-top: 2.5rem;
+  }
+
+  .note a {
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+</style>

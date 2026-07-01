@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import WhyDoula from "../components/WhyDoula.astro";
+import PricingCard from "../components/PricingCard.astro";
+import JsonLd from "../components/JsonLd.astro";
+import { packages } from "../data/packages";
+import { siteConfig } from "../data/siteConfig";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  name: siteConfig.businessName,
+  description: `Birth and postpartum doula support serving families throughout ${siteConfig.serviceAreaRegion}.`,
+  url: Astro.site?.toString(),
+  telephone: siteConfig.phoneHref.replace("tel:", ""),
+  email: siteConfig.email,
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "UT",
+    addressCountry: "US",
+  },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: siteConfig.serviceAreaRegion },
+    ...siteConfig.serviceAreaCities.map((city) => ({ "@type": "City", name: city })),
+  ],
+  makesOffer: packages.map((pkg) => ({
+    "@type": "Offer",
+    price: pkg.price,
+    priceCurrency: "USD",
+    itemOffered: { "@type": "Service", name: pkg.name, description: pkg.description },
+  })),
+  sameAs: [siteConfig.instagramUrl],
+};
+---
+
+<BaseLayout
+  title={siteConfig.businessName}
+  description={`Birth doula and online birth consultant serving ${siteConfig.serviceAreaRegion}. Discover the birth you deserve.`}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <Hero />
+  <WhyDoula compact />
+
+  <section class="home-pricing container">
+    <h2 class="mon-cheri section-heading">Pick your service</h2>
+    <div class="pricing-grid">
+      {packages.map((pkg) => <PricingCard pkg={pkg} compact />)}
+    </div>
+    <a href="/pricing/" class="open-sans-regular see-all">See full pricing details &rarr;</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .home-pricing {
+    padding: 3rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .section-heading {
+    color: var(--dark-blush);
+    margin-bottom: 2rem;
+  }
+
+  .pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .see-all {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

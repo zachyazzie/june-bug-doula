@@ -1,0 +1,104 @@
+---
+import { getImage } from "astro:assets";
+import bellyImage from "../assets/images/woman-holding-belly.jpg";
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const optimized = await getImage({ src: bellyImage, width: 700, format: "webp" });
+---
+
+<section id="why-section" style={`--why-image-url: url(${optimized.src})`}>
+  <div class="container why-grid">
+    <div id="june-bug-why-section-image" class="rounded-pill" aria-hidden="true"></div>
+    <div class="why-text-container">
+      <p class="mon-cheri lead-in">Let me tell you</p>
+      <h2 class="mon-cheri">Why you need a doula</h2>
+      <p class="open-sans-regular">
+        A study published in The Journal of Perinatal Education found that doula-assisted mothers
+        were four times less likely to have a low birth weight baby, two times less likely to
+        experience a birth complication, and significantly more likely to initiate breastfeeding.
+        {
+          !compact && (
+            <>
+              {" "}A doula&apos;s job is to provide you and your partner with the support,
+              techniques, and education needed to advocate for the birth you want.
+            </>
+          )
+        }
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  #why-section {
+    padding: 4rem 0;
+  }
+
+  .why-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #june-bug-why-section-image {
+    height: 250px;
+    width: 250px;
+    background-image: var(--why-image-url);
+    background-size: cover;
+    background-position: center;
+    border: 20px solid var(--light-brown);
+    margin-bottom: -60px;
+    z-index: 2;
+  }
+
+  .why-text-container {
+    color: var(--light-brown);
+    background-color: var(--medium-blush);
+    border-radius: 3em;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .lead-in {
+    margin-bottom: 0;
+  }
+
+  .why-text-container h2 {
+    font-size: 1.75em;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .why-grid {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    #june-bug-why-section-image {
+      height: 300px;
+      width: 300px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .why-text-container {
+      text-align: left;
+      padding: 3rem;
+      max-width: 700px;
+    }
+
+    .why-text-container h2 {
+      font-size: 2.5em;
+    }
+
+    .why-text-container p {
+      font-size: 1.25em;
+    }
+  }
+</style>

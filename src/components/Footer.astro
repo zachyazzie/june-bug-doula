@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import instagramLogo from "../assets/images/instagram-logo.png";
+import { siteConfig } from "../data/siteConfig";
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href={siteConfig.phoneHref} class="open-sans-regular">{siteConfig.phoneDisplay}</a>
+    <a href={`mailto:${siteConfig.email}`} class="open-sans-regular">{siteConfig.email}</a>
+    <div class="social">
+      <span class="social-icon">
+        <Image src={instagramLogo} alt="Instagram logo" width={25} />
+      </span>
+      <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer" class="open-sans-regular">
+        {siteConfig.instagramHandle}
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 2px solid var(--medium-blush);
+    padding: 2rem 1rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .footer-inner a {
+    font-size: 1.25em;
+    color: var(--medium-blush);
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--medium-blush);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>

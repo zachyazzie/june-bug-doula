@@ -1,0 +1,211 @@
+---
+import { getImage } from "astro:assets";
+import doulaPortrait from "../assets/images/aubrey-smiling-forward.jpg";
+import bgImage from "../assets/images/woman-facing-away-in-mirror.jpg";
+import { siteConfig } from "../data/siteConfig";
+
+const optimizedPortrait = await getImage({ src: doulaPortrait, width: 600, format: "webp" });
+const optimizedBg = await getImage({ src: bgImage, width: 1600, format: "webp" });
+---
+
+<section
+  id="title-section"
+  style={`--portrait-url: url(${optimizedPortrait.src}); --bg-url: url(${optimizedBg.src})`}
+>
+  <div class="hero-grid">
+    <div class="hero-text-col">
+      <div class="hero-text-inner">
+        <h1 class="mon-cheri">Discover <br class="force-break" />the birth <br class="force-break" />you <br class="force-break" />deserve</h1>
+        <span class="line" aria-hidden="true"></span>
+        <p class="poppins-medium text-larger">{siteConfig.ownerName}</p>
+        <p class="poppins-regular hero-subtitle">
+          Birth Doula <br />and online birth <span>consultant</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-image-col">
+      <div id="title-section-bg-image"></div>
+      <div id="title-section-doula-image"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const bg = document.getElementById("title-section-bg-image");
+  if (bg) {
+    document.addEventListener(
+      "scroll",
+      () => {
+        bg.style.backgroundPositionY = `${window.scrollY * 0.5}px`;
+      },
+      { passive: true },
+    );
+  }
+</script>
+
+<style>
+  #title-section {
+    background-color: var(--light-brown);
+    padding-top: 2rem;
+  }
+
+  .hero-grid {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    min-width: 0;
+  }
+
+  .hero-text-inner {
+    color: var(--dark-blush);
+    text-transform: uppercase;
+  }
+
+  .hero-text-inner h1 {
+    font-size: 2em;
+  }
+
+  .force-break {
+    display: none;
+  }
+
+  .line {
+    display: block;
+    border-bottom: 1px solid var(--dark-blush);
+    margin: 1rem auto;
+    width: 100px;
+  }
+
+  .hero-text-inner p {
+    letter-spacing: 6px;
+  }
+
+  .text-larger {
+    font-size: 1.5em;
+  }
+
+  .hero-subtitle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-image-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+  }
+
+  #title-section-bg-image {
+    display: none;
+  }
+
+  #title-section-doula-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50rem;
+    background-image: var(--portrait-url);
+    background-size: cover;
+    background-position: center;
+    border: 20px solid var(--light-brown);
+  }
+
+  @media (min-width: 576px) {
+    .force-break {
+      display: inline;
+    }
+
+    .hero-text-inner h1 {
+      font-size: 2.5em;
+    }
+
+    #title-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.15fr 1fr;
+      width: 100%;
+    }
+
+    .hero-text-col {
+      align-items: flex-end;
+      text-align: left;
+      padding-right: 2rem;
+    }
+
+    #title-section-doula-image {
+      height: 500px;
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-text-inner h1 {
+      font-size: 3em;
+    }
+
+    #title-section-bg-image {
+      display: block;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      background-image: var(--bg-url);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: 1062px) {
+    .hero-text-inner h1 {
+      font-size: 3.5em;
+    }
+  }
+
+  @media (min-width: 1155px) {
+    .hero-text-inner h1 {
+      font-size: 4em;
+    }
+
+    .hero-text-col {
+      /* Extra clearance so long lines (e.g. "the birth", "deserve")
+         don't collide with the doula portrait, which overlaps left
+         into this column via its own `left: -150px` offset below.
+         Only introduced at this wider breakpoint, where the text
+         column has enough room to spare it. */
+      padding-right: 11rem;
+    }
+
+    #title-section-doula-image {
+      position: absolute;
+      left: -150px;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1340px) {
+    .hero-text-inner h1 {
+      font-size: 4.5em;
+    }
+  }
+</style>

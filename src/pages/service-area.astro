@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../data/siteConfig";
+---
+
+<BaseLayout
+  title="Service Area"
+  description={`Junebug Doula provides in-person birth doula support throughout ${siteConfig.serviceAreaRegion}, plus online consultations anywhere.`}
+>
+  <section class="service-area container">
+    <p class="mon-cheri eyebrow">Service Area</p>
+    <h1 class="mon-cheri">Serving {siteConfig.serviceAreaRegion}</h1>
+    <p class="open-sans-regular lead">
+      I provide in-person birth doula support to families throughout {siteConfig.serviceAreaRegion},
+      including:
+    </p>
+
+    <ul class="city-list open-sans-regular">
+      {siteConfig.serviceAreaCities.map((city) => <li>{city}</li>)}
+    </ul>
+
+    <p class="open-sans-regular">
+      Don't see your city listed, or live outside {siteConfig.serviceAreaRegion}? I also offer{" "}
+      <a href="/services/online-consultation/">online birth consultations</a> available anywhere -
+      <a href="/contact/">reach out</a> and we can figure out what works.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-area {
+    padding: 3rem 1.5rem 4rem;
+    max-width: 700px;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    font-size: 1.1em;
+  }
+
+  .service-area h1 {
+    color: var(--dark-blush);
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.1em;
+  }
+
+  .city-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background-color: var(--blush);
+    border-radius: 1.5rem;
+    color: var(--dark-brown);
+  }
+
+  .city-list li::before {
+    content: "• ";
+    color: var(--dark-blush);
+  }
+
+  a {
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 576px) {
+    .city-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

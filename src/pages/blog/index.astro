@@ -1,0 +1,82 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BaseLayout
+  title="Blog"
+  description="Articles on hiring a doula, birth planning, and postpartum support in Utah County."
+>
+  <section class="blog-index container">
+    <p class="mon-cheri eyebrow">Blog</p>
+    <h1 class="mon-cheri">Birth &amp; postpartum resources</h1>
+    <ul class="post-list">
+      {
+        posts.map((post) => (
+          <li class="post-card">
+            <a href={`/blog/${post.id}/`}>
+              <h2 class="mon-cheri">{post.data.title}</h2>
+              <p class="open-sans-regular date">{dateFormatter.format(post.data.pubDate)}</p>
+              <p class="open-sans-regular">{post.data.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-index {
+    padding: 3rem 1.5rem 4rem;
+    max-width: 800px;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    font-size: 1.1em;
+  }
+
+  .blog-index h1 {
+    color: var(--dark-blush);
+    font-size: 2em;
+    margin-bottom: 2rem;
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    background-color: var(--blush);
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .post-card a {
+    display: block;
+    color: var(--dark-brown);
+  }
+
+  .post-card h2 {
+    font-size: 1.4em;
+    margin-bottom: 0.25rem;
+  }
+
+  .date {
+    color: var(--medium-blush);
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,0 +1,123 @@
+---
+import { getImage } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import handsInPockets from "../assets/images/aubrey-smiling-hands-in-pockets.jpg";
+import { siteConfig } from "../data/siteConfig";
+
+const optimized = await getImage({ src: handsInPockets, width: 700, format: "webp" });
+---
+
+<BaseLayout
+  title="About"
+  description={`Meet ${siteConfig.ownerName}, a DONA-trained birth doula serving ${siteConfig.serviceAreaRegion}.`}
+>
+  <section class="about-hero container">
+    <p class="mon-cheri eyebrow">About</p>
+    <h1 class="mon-cheri page-heading">Meet {siteConfig.ownerName}</h1>
+    <div class="about-grid">
+      <div class="about-photo" style={`background-image: url(${optimized.src})`}></div>
+      <div class="about-panels">
+        <div class="about-panel">
+          <h2 class="mon-cheri">Who <span class="text-nowrap">am I?</span></h2>
+          <p class="open-sans-regular">
+            Hi! I'm so glad you're here. I'm {siteConfig.ownerName} - a mom of two wild boys, a
+            lover of 80s dance workouts, and a DONA trained birth doula. I am passionate about
+            helping mothers feel positive and in control of their birth experience.
+          </p>
+        </div>
+        <div class="about-panel">
+          <h2 class="mon-cheri">Why a june bug?</h2>
+          <p class="open-sans-regular">
+            June bugs symbolize growth, renewal, and change - all perfect descriptions of
+            pregnancy! June is also when my second son was born, and his birth is what inspired
+            me to become a doula.
+          </p>
+        </div>
+        <div class="about-panel">
+          <h2 class="mon-cheri">Credentials</h2>
+          <p class="open-sans-regular">
+            I'm a DONA International trained birth doula, and I recently relocated to{" "}
+            {siteConfig.serviceAreaRegion} - see the{" "}
+            <a href="/service-area/">service area page</a>{" "}
+            for the cities I currently serve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    text-align: right;
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-heading {
+    color: var(--dark-blush);
+    font-size: 2em;
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .about-photo {
+    height: 320px;
+    border-radius: 3rem;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .about-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-panel {
+    background-color: var(--blush);
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+
+  .about-panel h3 {
+    font-size: 1.75em;
+    color: var(--dark-brown);
+    margin-bottom: 0.75rem;
+  }
+
+  .about-panel p,
+  .about-panel a {
+    color: var(--dark-brown);
+  }
+
+  .text-nowrap {
+    white-space: nowrap;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .about-photo {
+      flex: 1;
+      height: 420px;
+    }
+
+    .about-panels {
+      flex: 1;
+    }
+  }
+</style>

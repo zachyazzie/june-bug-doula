@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../data/siteConfig";
+
+const faqs = [
+  {
+    question: "When should I book a doula?",
+    answer:
+      "Most families reach out early in the second trimester, but I take clients as late as a few weeks before their due date if I have availability. Earlier is better so we have plenty of time to build your birth plan together.",
+  },
+  {
+    question: "What's the difference between the Basic and Premium birth packages?",
+    answer:
+      "Both include prenatal appointments, on-call labor support, birth attendance and coaching, and postpartum follow-up. The Premium package adds an extra prenatal visit, an earlier on-call window, a calming birth package, hypno-birth training, and a second postpartum follow-up. See the Pricing page for full details.",
+  },
+  {
+    question: "Do you offer payment plans?",
+    answer:
+      `Yes - reach out through the ${siteConfig.email ? "contact page" : "contact form"} and we can set up a payment plan that works for your budget.`,
+  },
+  {
+    question: "Can I use my HSA or FSA to pay for a doula?",
+    answer:
+      "Many HSA/FSA plans do cover doula services, though it typically requires a Letter of Medical Necessity from your healthcare provider. Check with your plan administrator, and I'm happy to provide an itemized receipt for reimbursement.",
+  },
+  {
+    question: "Do you serve areas outside Utah County?",
+    answer:
+      "In-person support is focused on Utah County (see the Service Area page for the full city list). If you're outside that area, an online birth consultation is available anywhere.",
+  },
+];
+---
+
+<BaseLayout title="FAQ" description="Answers to common questions about booking a birth doula, pricing, payment plans, and HSA/FSA reimbursement.">
+  <section class="faq container">
+    <p class="mon-cheri eyebrow">FAQ</p>
+    <h1 class="mon-cheri">Common questions</h1>
+    <dl class="faq-list">
+      {
+        faqs.map((item) => (
+          <div class="faq-item">
+            <dt class="poppins-semibold">{item.question}</dt>
+            <dd class="open-sans-regular">{item.answer}</dd>
+          </div>
+        ))
+      }
+    </dl>
+    <p class="open-sans-regular note">
+      Have a question that's not answered here? <a href="/contact/">Get in touch</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .faq {
+    padding: 3rem 1.5rem 4rem;
+    max-width: 700px;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    font-size: 1.1em;
+  }
+
+  .faq h1 {
+    color: var(--dark-blush);
+    font-size: 2em;
+    margin-bottom: 2rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin: 0;
+  }
+
+  .faq-item dt {
+    color: var(--dark-brown);
+    font-size: 1.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .faq-item dd {
+    margin: 0;
+    color: var(--dark-brown);
+  }
+
+  .note {
+    margin-top: 2.5rem;
+  }
+
+  .note a {
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+</style>

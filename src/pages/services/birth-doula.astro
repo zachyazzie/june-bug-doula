@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PricingCard from "../../components/PricingCard.astro";
+import WhyDoula from "../../components/WhyDoula.astro";
+import { packages } from "../../data/packages";
+import { siteConfig } from "../../data/siteConfig";
+
+const birthPackages = packages.filter((pkg) => pkg.id !== "online-consultation");
+---
+
+<BaseLayout
+  title="Birth Doula Support"
+  description={`In-person birth doula support for families in ${siteConfig.serviceAreaRegion}. Prenatal visits, on-call labor support, birth attendance and coaching.`}
+>
+  <section class="service-intro container">
+    <p class="mon-cheri eyebrow">Services</p>
+    <h1 class="mon-cheri">Birth Doula Support</h1>
+    <p class="open-sans-regular lead">
+      Continuous, in-person labor support for your birth in {siteConfig.serviceAreaRegion} -
+      from prenatal planning through your early postpartum days.
+    </p>
+
+    <div class="service-body">
+      <h2 class="mon-cheri">What's included</h2>
+      <p class="open-sans-regular">
+        Every birth doula package includes prenatal appointments to build your birth plan
+        together, on-call labor support in the weeks around your due date, hands-on comfort
+        techniques and coaching during labor and delivery, and postpartum follow-up visits to
+        check in on you and baby. Choose the Basic or Premium package below depending on how much
+        prenatal and postpartum support you'd like.
+      </p>
+
+      <h2 class="mon-cheri">Who it's for</h2>
+      <p class="open-sans-regular">
+        Families planning a hospital, birth center, or home birth in
+        {" "}{siteConfig.serviceAreaCities.join(", ")}, and surrounding {siteConfig.serviceAreaRegion}{" "}
+        communities, who want a consistent, trained support person in the room with them - in
+        addition to (not instead of) their medical team.
+      </p>
+
+      <h2 class="mon-cheri">My approach</h2>
+      <p class="open-sans-regular">
+        As a DONA-trained doula, I focus on helping you and your partner feel informed and in
+        control of your own birth experience - not on any one "right way" to give birth. That
+        means real information, hands-on comfort measures, and steady support so you can advocate
+        for the birth you want.
+      </p>
+    </div>
+  </section>
+
+  <WhyDoula />
+
+  <section class="service-pricing container">
+    <h2 class="mon-cheri">Packages</h2>
+    <div class="pricing-grid">
+      {birthPackages.map((pkg) => <PricingCard pkg={pkg} />)}
+    </div>
+    <p class="open-sans-regular note">
+      Have questions about payment, insurance, or HSA/FSA reimbursement? Check the <a href="/faq/">FAQ</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-intro {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    font-size: 1.1em;
+    margin-bottom: 0.25rem;
+  }
+
+  .service-intro h1 {
+    color: var(--dark-blush);
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.15em;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .service-body {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .service-body h2 {
+    color: var(--dark-brown);
+    font-size: 1.4em;
+  }
+
+  .service-pricing {
+    padding: 3rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .service-pricing h2 {
+    color: var(--dark-blush);
+    margin-bottom: 2rem;
+  }
+
+  .pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .note {
+    margin-top: 2rem;
+  }
+
+  .note a {
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+</style>

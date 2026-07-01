@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="post container">
+    <p class="open-sans-regular date">{dateFormatter.format(post.data.pubDate)}</p>
+    <h1 class="mon-cheri">{post.data.title}</h1>
+    <div class="post-body open-sans-regular">
+      <Content />
+    </div>
+    <p class="back"><a href="/blog/">&larr; Back to all posts</a></p>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding: 3rem 1.5rem 4rem;
+    max-width: 700px;
+  }
+
+  .date {
+    color: var(--medium-blush);
+    font-size: 0.9em;
+  }
+
+  .post h1 {
+    color: var(--dark-blush);
+    font-size: 2em;
+    margin: 0.5rem 0 2rem;
+  }
+
+  .post-body {
+    color: var(--dark-brown);
+    line-height: 1.7;
+  }
+
+  .post-body :global(h2) {
+    color: var(--dark-brown);
+    font-size: 1.4em;
+    margin-top: 2rem;
+  }
+
+  .post-body :global(a) {
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+
+  .post-body :global(ul) {
+    padding-left: 1.25rem;
+  }
+
+  .back {
+    margin-top: 2.5rem;
+  }
+
+  .back a {
+    color: var(--dark-blush);
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,111 @@
+---
+import { getImage } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import lookingUp from "../assets/images/aubrey-smiling-looking-up.jpg";
+import { siteConfig } from "../data/siteConfig";
+
+const optimized = await getImage({ src: lookingUp, width: 500, format: "webp" });
+---
+
+<BaseLayout
+  title="Contact"
+  description={`Call or email ${siteConfig.ownerName} to schedule a free "get to know you" appointment.`}
+>
+  <section class="contact container">
+    <p class="mon-cheri eyebrow">Contact</p>
+    <div class="contact-card">
+      <div class="contact-photo" style={`background-image: url(${optimized.src})`}></div>
+      <div class="contact-text">
+        <h1 class="mon-cheri">
+          <span class="heading-sm">Let's work</span>
+          <span class="heading-lg">together</span>
+        </h1>
+        <p class="open-sans-regular">
+          Call or email me to schedule a free "get to know you" appointment.
+        </p>
+        <div class="contact-links">
+          <a href={siteConfig.phoneHref} class="open-sans-regular">{siteConfig.phoneDisplay}</a>
+          <a href={`mailto:${siteConfig.email}`} class="open-sans-regular">{siteConfig.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    text-align: right;
+    font-size: 1.5em;
+  }
+
+  .contact-card {
+    position: relative;
+    background-color: var(--medium-blush);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    margin-top: 1.5rem;
+    color: var(--light-brown);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-photo {
+    height: 220px;
+    border-radius: 2rem;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .contact-card h1 {
+    margin: 0;
+  }
+
+  .heading-sm {
+    display: block;
+    font-size: 1.25em;
+    margin: 0;
+  }
+
+  .heading-lg {
+    display: block;
+    font-size: 2.25em;
+    margin: 0 0 0.5rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .contact-links a {
+    color: var(--light-brown);
+    font-size: 1.1em;
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .contact-card {
+      flex-direction: row;
+      align-items: center;
+      padding: 3rem;
+    }
+
+    .contact-photo {
+      flex-shrink: 0;
+      width: 240px;
+      height: 320px;
+    }
+
+    .heading-lg {
+      font-size: 3em;
+    }
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PricingCard from "../../components/PricingCard.astro";
+import { packages } from "../../data/packages";
+import { siteConfig } from "../../data/siteConfig";
+
+const consultPackage = packages.find((pkg) => pkg.id === "online-consultation")!;
+---
+
+<BaseLayout
+  title="Online Birth Consultation"
+  description="A one-hour online video consultation to build your custom birth plan, answer your birth questions, and learn pain-management and relaxation techniques - available anywhere."
+>
+  <section class="service-intro container">
+    <p class="mon-cheri eyebrow">Services</p>
+    <h1 class="mon-cheri">Online Birth Consultation</h1>
+    <p class="open-sans-regular lead">
+      Can't meet in person, or don't live in {siteConfig.serviceAreaRegion}? A virtual
+      consultation gets you the same birth-planning support over video.
+    </p>
+
+    <div class="service-body">
+      <h2 class="mon-cheri">What's included</h2>
+      <p class="open-sans-regular">
+        One hour, one-on-one over video. Together we'll formulate a birth plan custom to you,
+        answer all of your birth questions, and walk through the stages of labor along with
+        techniques for pain management and relaxation.
+      </p>
+
+      <h2 class="mon-cheri">Who it's for</h2>
+      <p class="open-sans-regular">
+        Anyone who wants professional birth-planning support without in-person doula
+        attendance - whether you're outside my in-person service area, prefer a virtual format, or
+        just want a single focused planning session.
+      </p>
+    </div>
+
+    <div class="single-pricing">
+      <PricingCard pkg={consultPackage} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-intro {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .eyebrow {
+    color: var(--dark-blush);
+    font-size: 1.1em;
+    margin-bottom: 0.25rem;
+  }
+
+  .service-intro h1 {
+    color: var(--dark-blush);
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.15em;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .service-body {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .service-body h2 {
+    color: var(--dark-brown);
+    font-size: 1.4em;
+  }
+
+  .single-pricing {
+    display: flex;
+    justify-content: center;
+  }
+</style>
