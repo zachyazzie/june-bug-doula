@@ -187,9 +187,19 @@ const links: NavLink[] = [
   .nav-link {
     color: var(--dark-blush);
     font-size: 1em;
+    white-space: nowrap;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-wrapper {
+      flex: 0 0 auto;
+    }
+
     .line-vertical {
       display: block;
     }

@@ -47,7 +47,7 @@ const optimizedBg = await getImage({ src: bgImage, width: 1600, format: "webp" }
 <style>
   #title-section {
     background-color: var(--light-brown);
-    padding-top: 2rem;
+    padding: 2rem 0 4rem;
   }
 
   .hero-grid {
@@ -120,6 +120,7 @@ const optimizedBg = await getImage({ src: bgImage, width: 1600, format: "webp" }
     background-size: cover;
     background-position: center;
     border: 20px solid var(--light-brown);
+    z-index: 1;
   }
 
   @media (min-width: 576px) {
@@ -129,12 +130,6 @@ const optimizedBg = await getImage({ src: bgImage, width: 1600, format: "webp" }
 
     .hero-text-inner h1 {
       font-size: 2.5em;
-    }
-
-    #title-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
     }
 
     .hero-grid {
