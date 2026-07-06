@@ -1,7 +1,7 @@
 ---
 import { getImage } from "astro:assets";
 import doulaPortrait from "../assets/images/aubrey-smiling-forward.jpg";
-import bgImage from "../assets/images/woman-facing-away-in-mirror.jpg";
+import bgImage from "../assets/images/home-hero.png";
 import { siteConfig } from "../data/siteConfig";
 
 const optimizedPortrait = await getImage({ src: doulaPortrait, width: 600, format: "webp" });
@@ -109,18 +109,15 @@ const optimizedBg = await getImage({ src: bgImage, width: 1600, format: "webp" }
   }
 
   #title-section-bg-image {
-    display: none;
-  }
-
-  #title-section-doula-image {
-    height: 150px;
-    width: 150px;
-    border-radius: 50rem;
-    background-image: var(--portrait-url);
-    background-size: cover;
-    background-position: center;
-    border: 20px solid var(--light-brown);
-    z-index: 1;
+     display: block;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      background-image: var(--bg-url);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
   }
 
   @media (min-width: 576px) {
@@ -186,8 +183,13 @@ const optimizedBg = await getImage({ src: bgImage, width: 1600, format: "webp" }
          column has enough room to spare it. */
       padding-right: 11rem;
     }
-
+    
     #title-section-doula-image {
+      border-radius: 50rem;
+      background-image: var(--portrait-url);
+      background-size: cover;
+      background-position: center;
+      border: 20px solid var(--light-brown);
       position: absolute;
       left: -150px;
       z-index: 2;
